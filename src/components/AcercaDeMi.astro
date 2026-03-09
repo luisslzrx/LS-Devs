@@ -1,12 +1,19 @@
 ---
+import PersonIcon from './icons/person-icon.astro';
 ---
 
-<section id="about" class="px-8 py-24">
+<section class="py-38">
 
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-16">
+  <div class="flex items-center gap-2 mb-8 -ml-2">
+        <PersonIcon class="w-6 h-6 fill-white" />
+        <h2 class="text-3xl font-bold ">Acerca de mí</h2>
+    </div>
+  
+  
+  <div class="flex flex-col md:flex-row gap-16">
 
     <!-- SERVICIOS -->
-    <div class="md:w-1/3 space-y-10">
+    <div class="space-y-6">
 
       <div class="flex items-center gap-4">
         <div class="w-12 h-12 flex items-center justify-center rounded-full border border-blue-400 text-blue-400">
@@ -31,32 +38,25 @@
     <!-- CONTENIDO -->
     <div class="flex-1">
 
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Mi Experiencia y Propósito
-      </h2>
-
-      <p class="text-gray-400 mb-10">
-        Descubrí en el desarrollo web una forma de transformar ideas en
-        experiencias digitales únicas. Me apasiona crear sitios modernos,
-        funcionales y visualmente atractivos que conecten a las personas con
-        lo que buscan. Cada proyecto es una oportunidad para aprender,
-        mejorar y construir algo con propósito.
+      <p class="mb-10">
+        Soy desarrollador web enfocado en crear soluciones digitales funcionales y bien estructuradas. Me especializo en Frontend y continúo ampliando mis habilidades hacia Backend para trabajar mejor en todo el ecosistema de una aplicación web. <br>
+        La atención al detalle y la curiosidad guían mi trabajo. Tengo conocimientos en UX/UI, diseño responsive, SEO y marketing digital, lo que me permite desarrollar experiencias web claras, eficientes y orientadas a generar valor.
       </p>
 
       <!-- ESTADISTICAS -->
-      <div class="flex gap-10 flex-wrap">
+      <div class="flex gap-6 sm:gap-8 md:gap-10 flex-wrap">
 
-        <div>
-          <p class="text-3xl font-bold text-blue-400">10+</p>
-          <p class="text-gray-400 text-sm">Proyectos realizados</p>
+        <div class="flex-1 min-w-[100px] text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-blue-400">10+</p>
+          <p class="text-sm sm:text-base text-gray-400">Proyectos realizados</p>
         </div>
-        <div>
-          <p class="text-3xl font-bold text-blue-400">95%</p>
-          <p class="text-gray-400 text-sm">Satisfacción del cliente</p>
+        <div class="flex-1 min-w-[100px] text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-blue-400">95%</p>
+          <p class="text-sm sm:text-base text-gray-400">Satisfacción del cliente</p>
         </div>
-        <div>
-          <p class="text-3xl font-bold text-blue-400">2+</p>
-          <p class="text-gray-400 text-sm">Años desarrollando</p>
+        <div class="flex-1 min-w-[100px] text-center">
+          <p class="text-2xl sm:text-3xl font-bold text-blue-400">2+</p>
+          <p class="text-sm sm:text-base text-gray-400">Años desarrollando</p>
         </div>
       </div>
     </div>

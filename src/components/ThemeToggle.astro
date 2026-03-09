@@ -1,0 +1,48 @@
+---
+import DarkModeIcon from './icons/dark-mode-icon.astro';
+---
+
+<button 
+  id="theme-toggle"
+  class="p-2 rounded-lg bg-transparent hover:bg-white/20 dark:hover:bg-black/20 transition-colors"
+  aria-label="Cambiar tema"
+>
+  <DarkModeIcon class="w-6 h-6 hidden dark:block" fill="currentColor" />
+  <DarkModeIcon class="w-6 h-6 block dark:hidden" fill="currentColor" />
+</button>
+
+<script is:inline>
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  
+  // Función para aplicar tema
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.classList.remove('dark');
+      html.classList.add('light');
+      html.setAttribute('data-theme', 'light');
+    } else {
+      html.classList.remove('light');
+      html.classList.add('dark');
+      html.setAttribute('data-theme', 'dark');
+    }
+    localStorage.setItem('theme', theme);
+  }
+  
+  // Por defecto: tema oscuro
+  const defaultTheme = 'dark';
+  
+  // Verificar tema guardado o usar el por defecto
+  const savedTheme = localStorage.getItem('theme');
+  const currentTheme = savedTheme || defaultTheme;
+  
+  // Aplicar tema inicial
+  applyTheme(currentTheme);
+  
+  // Cambiar tema al hacer clic
+  themeToggle?.addEventListener('click', () => {
+    const isDark = html.classList.contains('dark');
+    const newTheme = isDark ? 'light' : 'dark';
+    applyTheme(newTheme);
+  });
+</script>

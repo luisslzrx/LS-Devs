@@ -1,29 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import AcercaDeMi from "../components/AcercaDeMi.astro";
-import Servicios from "../components/Servicios.astro";
 import Proyectos from "../components/Proyectos.astro";
-import Card from "../components/Card.astro";
-import Proceso from "../components/Proceso.astro";
-import Precios from "../components/Precios.astro";
-import CTA from "../components/CTA.astro";
+import Experiencia from "../components/Experiencia.astro";
+import Habilidades from "../components/Habilidades.astro";
 import Contacto from "../components/Contacto.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <main>
-    <Hero />
-    <AcercaDeMi />
-    <Servicios />
-    <Proyectos />
-    <Card />
-    <Proceso />
-    <Precios />
-    <CTA />
-    <Contacto />
+  <main class="w-full max-w-[900px] mx-auto px-6 md:px-8">
+    <section id="inicio">
+      <Hero />
+    </section>
+    <section id="experiencia" class="my-24">
+      <Experiencia />
+    </section>
+     <section id="proyectos" class="mt-24">
+      <Proyectos />
+    </section>
+    <section id="habilidades" class="mt-24">
+      <Habilidades />
+    </section>
+    <section id="contacto" class="mt-24">
+      <Contacto />
+    </section>
   </main>
-  <Footer />
 </Layout>

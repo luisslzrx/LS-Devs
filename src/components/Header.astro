@@ -1,107 +1,218 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
+import LinkedinIcon from "./icons/linkedin-icon.astro";
+import GithubIcon from "./icons/GitHub-icon.astro";
 ---
 
 <header
   id="mainHeader"
-  class="fixed top-0 left-0 w-full z-[999] transition-all duration-500 ease-in-out"
+  class="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]"
 >
-  <div
-    class="max-w-[1200px] mx-auto px-7 py-6 flex items-center justify-between"
-  >
-    <!-- LOGO -->
-    <div>
-      <img
-        src="/images/logo-luis-salazar-removebg-preview.png"
-        alt="Luis Salazar"
-        class="block"
-        height="60"
-      />
-    </div>
 
-    <!-- BOTÓN HAMBURGUESA (SOLO MOBILE) -->
-    <div
-      id="menuToggle"
-      class="hidden max-[900px]:flex flex-col gap-[6px] cursor-pointer"
-    >
-      <span class="w-[26px] h-[2px] bg-white rounded-sm"></span>
-      <span class="w-[26px] h-[2px] bg-white rounded-sm"></span>
-      <span class="w-[26px] h-[2px] bg-white rounded-sm"></span>
-    </div>
+<!-- MOBILE / TABLET HEADER -->
+<div class="md:hidden flex items-center justify-between px-6 py-4">
 
-    <!-- MENU -->
-    <nav
-      id="navbar"
-      class="flex gap-9 transition-all duration-500 ease-in-out
-             max-[900px]:fixed
-             max-[900px]:top-[90px]
-             max-[900px]:right-5
-             max-[900px]:flex-col
-             max-[900px]:gap-6
-             max-[900px]:px-8
-             max-[900px]:py-6
-             max-[900px]:bg-white/10
-             max-[900px]:backdrop-blur-xl
-             max-[900px]:rounded-3xl
-             max-[900px]:shadow-[0_24px_64px_rgba(0,0,0,0.45)]
-             max-[900px]:opacity-0
-             max-[900px]:pointer-events-none
-             max-[900px]:-translate-y-2"
-    >
-      <a
-        href="#hero"
-        class="text-base font-medium text-white/90 whitespace-nowrap transition-opacity duration-300 hover:opacity-100"
-        >Inicio</a
-      >
-      <a
-        href="#servicios"
-        class="text-base font-medium text-white/90 whitespace-nowrap transition-opacity duration-300 hover:opacity-100"
-        >Servicios</a
-      >
-      <a
-        href="#projects"
-        class="text-base font-medium text-white/90 whitespace-nowrap transition-opacity duration-300 hover:opacity-100"
-        >Proyectos</a
-      >
-      <a
-        href="#pricing"
-        class="text-base font-medium text-white/90 whitespace-nowrap transition-opacity duration-300 hover:opacity-100"
-        >Precios</a
-      >
-    </nav>
-
-    <!-- CTA -->
-    <a
-      href="#contact"
-      class="px-[26px] py-[14px] rounded-full text-sm text-white
-             bg-white/15 border border-white/30
-             backdrop-blur-[14px]
-             shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.25)]
-             transition-transform duration-300 ease-in-out
-             hover:scale-110
-             max-[900px]:hidden"
-    >
-      Contacto →
-    </a>
+  <div class="text-xl font-bold">
+    Luis Salazar
   </div>
+
+  <button id="menuButton" class="flex flex-col gap-1.5">
+    <span class="w-6 h-[2px] bg-white"></span>
+    <span class="w-6 h-[2px] bg-white"></span>
+    <span class="w-6 h-[2px] bg-white"></span>
+  </button>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+<div
+  id="mobileMenu"
+  class="md:hidden hidden flex flex-col gap-6 px-6 pb-6 pt-2 backdrop-blur-xl bg-slate-900/95"
+>
+
+  <a href="#inicio" class="hover:text-blue-400 transition-colors">
+    Inicio
+  </a>
+
+  <a href="#experiencia" class="hover:text-blue-400 transition-colors">
+    Experiencia
+  </a>
+
+  <a href="#proyectos" class="hover:text-blue-400 transition-colors">
+    Proyectos
+  </a>
+
+  <a href="#habilidades" class="hover:text-blue-400 transition-colors">
+    Habilidades
+  </a>
+
+  <div class="flex items-center gap-6 pt-4 border-t border-slate-700">
+
+    <a
+      href="www.linkedin.com/in/luis-gerardo-salazar-aguilar"
+      target="_blank"
+      class=" hover:text-blue-400 transition-colors"
+    >
+      <LinkedinIcon class="w-5 h-5" />
+    </a>
+
+    <a
+      href="https://github.com/luisslzrx"
+      target="_blank"
+      class=" hover:text-gray-400 transition-colors"
+    >
+      <GithubIcon class="w-5 h-5" />
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- DESKTOP HEADER -->
+<nav class="hidden md:block max-w-6xl mx-auto px-6 py-4 transition-all duration-500">
+  
+  <div class="flex justify-between items-center">
+
+    <div id="logoBlock" class="text-xl font-bold transition-all duration-500">
+      Luis Salazar
+    </div>
+
+    <div id="menuBlock" class="flex items-center gap-6 transition-all duration-500">
+      
+      <a href="#inicio" class="menuLink hover:text-blue-600 transition-colors">
+        Inicio
+      </a>
+
+      <a href="#experiencia" class="menuLink hover:text-blue-600 transition-colors">
+        Experiencia
+      </a>
+
+      <a href="#proyectos" class="menuLink hover:text-blue-600 transition-colors">
+        Proyectos
+      </a>
+
+      <a href="#habilidades" class="menuLink hover:text-blue-600 transition-colors">
+        Habilidades
+      </a>
+
+    </div>
+
+    <div id="iconsBlock" class="flex items-center gap-4 transition-all duration-500">
+      
+      <a
+        href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+        target="_blank"
+        class=" hover:text-blue-400 transition-colors"
+      >
+        <LinkedinIcon class="w-5 h-5" />
+      </a>
+
+      <a
+        href="https://github.com/luisslzrx"
+        target="_blank"
+        class=" hover:text-gray-400 transition-colors"
+      >
+        <GithubIcon class="w-5 h-5" />
+      </a>
+
+      <ThemeToggle />
+
+    </div>
+
+  </div>
+
+</nav>
+
 </header>
 
+<style>
+
+.menuLink{
+  white-space:nowrap;
+}
+
+/* SCROLL EFFECT SOLO DESKTOP */
+
+@media (min-width:768px){
+
+#mainHeader.scrolled{
+
+  width:auto;
+
+  top:18px;
+
+  border-radius:9999px;
+
+  padding-left:18px;
+  padding-right:28px;
+
+
+  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+}
+
+#mainHeader.scrolled #logoBlock{
+  opacity:0;
+  transform:scale(.8);
+  pointer-events:none;
+}
+
+#mainHeader.scrolled #iconsBlock{
+  opacity:0;
+  transform:scale(.8);
+  pointer-events:none;
+}
+
+#mainHeader.scrolled #menuBlock{
+  gap:32px;
+  font-size:0.9rem;
+}
+
+#mainHeader.scrolled nav{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+}
+
+</style>
+
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navbar = document.getElementById('navbar');
-  
-  if (menuToggle && navbar) {
-    menuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('opacity-0');
-      navbar.classList.toggle('pointer-events-none');
-      navbar.classList.toggle('-translate-y-2');
-    });
-    
-    // Cerrar menú al hacer clic en un enlace
-    const links = navbar.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
-      });
-    });
+
+const header = document.getElementById("mainHeader");
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
+
+/* scroll animation solo desktop */
+
+window.addEventListener("scroll", () => {
+
+  if (window.innerWidth >= 768) {
+
+    if (window.scrollY > 60) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+
   }
+
+});
+
+/* mobile menu toggle */
+
+menuButton?.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
 </script>

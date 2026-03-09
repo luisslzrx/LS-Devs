@@ -1,0 +1,84 @@
+---
+import LinkedlnIcon from "./icons/Linkedln-icon.astro";
+import WorkIcon from "./icons/work-icon.astro";
+
+interface Experiencia {
+  puesto: string;
+  empresa: string;
+  fecha: string;
+  descripcion: string;
+}
+
+const EXPERIENCIA: Experiencia[] = [
+  {
+    puesto: "Programador Web",
+    empresa: "Digitalrocks",
+    fecha: "Agosto 2025 - Presente",
+    descripcion: "Desarrollo de sitios web para empresas, incluyendo páginas corporativas, portafolios y e-commerce. Implemento estructuras optimizadas para mejorar experiencia de usuario y rendimiento, además de realizar migraciones y configuración de dominios, hosting y despliegue de proyectos."
+  },
+  {
+    puesto: "Desarrollador Web Freelance Remoto",
+    empresa: "Outlier",
+    fecha: "2024 - Presente",
+    descripcion: "Desarrollo y optimización de proyectos web utilizando C, Python, HTML, CSS y JavaScript. Revisión y depuración de código para mejorar eficiencia y estructura. Colaboración en recolección y evaluación de datos para entrenamiento de modelos de inteligencia artificial."
+  },
+  {
+    puesto: "Maestro de Informática y Programación",
+    empresa: "Centro de Estudios Las Américas",
+    fecha: "Junio 2023 - Junio 2025",
+    descripcion: "Impartí clases de desarrollo web con HTML y CSS, incluyendo maquetación con Flexbox y Grid. Guié a estudiantes en la creación de sitios web responsive y bien estructurados, además de introducir conceptos básicos de buenas prácticas de programación y uso de GitHub."
+  },
+  {
+    puesto: "Ingeniería en Instrumentación Electrónica",
+    empresa: "Universidad Veracruzana",
+    fecha: "2017 - 2022",
+    descripcion: "Formación en electrónica, instrumentación y sistemas tecnológicos. Desarrollo de habilidades en programación y lógica computacional para resolver problemas técnicos, con experiencia en herramientas digitales aplicadas a proyectos tecnológicos."
+  }
+];
+---
+
+<article class="container px-2 mt-10">
+
+    <div class="flex items-center gap-2 mb-8 -ml-2">
+        <WorkIcon class="w-6 h-6" />
+        <h2 class="text-3xl font-bold ">Experiencia laboral</h2>
+    </div>
+    
+  <ul class="relative border-l border-slate-300">
+
+    {EXPERIENCIA.map((item) => (
+
+      <li class="mb-8 ml-6">
+        <span class="absolute flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full -left-3 ring-1 ring-slate-100">
+          <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 
+              2v10a2 2 0 002 2h12a2 2 0 
+              002-2V6a2 2 0 00-2-2h-1V3a1 
+              1 0 10-2 0v1H7V3a1 1 
+              0 00-1-1zm0 5a1 1 0 000 
+              2h8a1 1 0 100-2H6z"
+              clip-rule="evenodd">
+            </path>
+          </svg>
+        </span>
+
+        <h3 class="flex items-center gap-2 mb-1 text-lg font-semibold text-cyan-400">
+          {item.puesto}
+          <span class="text-cyan-400 font-normal">-</span>
+          <span class="text-sm text-teal-400">{item.empresa}</span>
+        </h3>
+
+        <time class="block mb-2 text-sm text-teal-400">
+          {item.fecha}
+        </time>
+
+        <p class="">
+          {item.descripcion}
+        </p>
+      </li>
+
+    ))}
+
+  </ul>
+</article>

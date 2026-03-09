@@ -1,89 +1,112 @@
 ---
-import Header from "../components/Header.astro";
-import "../styles/global.css";
+import '../styles/global.css' 
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+	image?: string;
+	url?: string;
+	author?: string;
+	type?: string;
+	siteName?: string;
+	locale?: string;
+	card?: string;
+}
+
+const {
+	title = "Luis Salazar | Desarrollador Front-End & Web Developer",
+	description = "Desarrollador Front-End con experiencia en HTML, CSS, JavaScript, Astro, Tailwind, Python Django, PHP y WordPress. Interesado en UX/UI y SEO técnico.",
+	keywords = "desarrollador front end, desarrollador web especializado en HTML CSS JS, desarrollador Astro México, desarrollador WordPress profesional, desarrollador web con enfoque UX UI",
+	image = "/luisdev-logo.png",
+	url = "https://luissalazar.com.mx",
+	author = "Luis Salazar",
+	type = "website",
+	siteName = "Luis Salazar - Desarrollador Web",
+	locale = "es_MX",
+	card = "summary_large_image"
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Básico -->
-    <title>Desarrollo de Páginas Web Profesionales | Diseño Web y Ecommerce</title>
-    <meta name="description" content="Desarrollo de páginas web profesionales, sitios informativos, portafolios y tiendas en línea. Diseño web moderno y optimizado para negocios y empresas en Ciudad de México, Veracruz y Xalapa.">
-    <meta name="keywords" content="desarrollo de páginas web, diseño web profesional, crear página web, desarrollador web, diseño de páginas web para negocios, desarrollo web profesional, creación de sitios web, diseño web moderno, desarrollo de ecommerce, crear tienda en línea, páginas web profesionales, diseño web para empresas, desarrollo web freelance, diseño web personalizado, desarrollo web ciudad de méxico, desarrollo web veracruz, desarrollo web xalapa, diseño web ciudad de méxico, diseño web veracruz, diseño web xalapa">
-    <meta name="author" content="Luis Salazar">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="es">
-    
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="Desarrollo de Páginas Web Profesionales">
-    <meta property="og:description" content="Diseño y desarrollo de páginas web modernas, portafolios, sitios informativos y tiendas en línea para negocios y profesionales.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://luissalazar.dev">
-    <meta property="og:site_name" content="Luis Salazar - Desarrollador Web">
-    <meta property="og:locale" content="es_MX">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Desarrollo de Páginas Web Profesionales">
-    <meta name="twitter:description" content="Creación de páginas web modernas, portafolios, sitios informativos y ecommerce optimizados para negocios.">
-    <meta name="twitter:site" content="@luissalazar">
-    <meta name="twitter:creator" content="@luissalazar">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://luissalazar.dev">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Preconnect para rendimiento -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Luis Salazar - Desarrollo Web Profesional",
-        "description": "Desarrollo de páginas web profesionales, diseño web moderno y creación de tiendas en línea para negocios y empresas.",
-        "url": "https://luissalazar.dev",
-        "telephone": "+522288535112",
-        "email": "luisgerdx521@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ciudad de México",
-            "addressCountry": "MX"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "19.4326",
-            "longitude": "-99.1332"
-        },
-        "openingHours": "Mo-Su 09:00-18:00",
-        "serviceType": ["Desarrollo Web", "Diseño Web", "Ecommerce", "SEO"],
-        "areaServed": ["Ciudad de México", "Veracruz", "Xalapa"],
-        "priceRange": "$$",
-        "sameAs": [
-            "https://wa.me/522288535112",
-            "https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/",
-            "mailto:luisgerdx521@gmail.com"
-        ]
-    }
-    </script>
-</head>
 
-<body>
-    <Header />
-    <main class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-8">
-        <slot />
-    </main>
-</body>
+<!doctype html>
+<html lang="es-MX">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-luis.svg" />
+		<link rel="icon" href="/favicon-luis.png" />
+		<link rel="icon" type="image/png" href="/favicon-luis.png"/>
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content={author} />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="Spanish" />
+		<meta name="geo.region" content="MX-VER" />
+		<meta name="geo.placename" content="Veracruz, México" />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content={type} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:locale" content={locale} />
+		
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content={card} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:creator" content={author} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={url} />
+		
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Luis Salazar",
+			"jobTitle": "Desarrollador Front-End",
+			"description": "Desarrollador Front-End con experiencia en HTML, CSS, JavaScript, Astro, Tailwind, Python Django, PHP y WordPress.",
+			"url": url,
+			"image": image,
+			"sameAs": [
+				"https://github.com/luisslzrx",
+				"https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+			],
+			"knowsAbout": [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"Astro",
+				"Tailwind CSS",
+				"Python Django",
+				"PHP",
+				"WordPress",
+				"UX/UI",
+				"SEO técnico"
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Veracruz",
+				"addressCountry": "México"
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+	</body>
 </html>

@@ -1,68 +1,52 @@
 ---
+import WhatsappIcon from "./icons/whatsapp-icon.astro";
+import EmailIcon from "./icons/email-icon.astro";
+import DownloadIcon from "./icons/download-icon.astro";
 ---
 
-<section id="hero" class="flex flex-col md:flex-row items-center justify-between min-h-screen px-8 py-24 gap-10">
+<section class="flex flex-col items-center justify-center min-h-[100vh] px-6 py-12">
+  <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10 max-w-6xl w-full">
+    
+    <div class="flex-1 order-2 md:order-1 text-center md:text-left">
+      
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+        hey, <span class="text-cyan-400">soy Luis Salazar</span>
+      </h1>
 
-  <!-- TEXTO -->
-  <div class="max-w-xl">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-      Hola, Soy Luis Salazar
-    </h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
+        Desarrollador web <span class="text-sky-400">full stack</span>
+      </h2>
+      
+      <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-md sm:max-w-xl md:max-w-2xl mx-auto md:mx-0">
+        Transformo operaciones complejas a través de 
+        <span class="text-teal-500">ecosistemas inteligentes usando Ingeniería de Software y Automatización</span>. 
+        <span class="font-medium">Experto en integración de Datos, IA y Plataformas Empresariales.</span> 
+        No solo escribo código, construyo soluciones.
+      </p>
 
-    <p class="text-xl text-blue-400 font-semibold mb-4">
-      Desarrollador y Diseñador Web
-    </p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
 
-    <p class="text-gray-400 mb-8">
-      Diseño sitios web modernos, adaptables y centrados en la experiencia
-      del usuario. Transformo ideas en plataformas funcionales con pasión,
-      detalle y propósito.
-    </p>
-
-    <!-- BOTONES -->
-    <div class="flex items-center gap-4 flex-wrap">
-
-      <a
-        href="#contact"
-        class="glass-style px-6 py-3 border rounded-full text-white hover:scale-105 transition inline-flex items-center justify-center h-12"
-      >
-        Contáctame Ahora
-      </a>
-
-      <div class="flex gap-3">
-
-        <a
-          href="https://wa.me/522288535112"
-          class="glass-style w-12 h-12 border rounded-full flex items-center justify-center text-white hover:scale-110 transition"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
+        <a href="mailto:luis.salazar@email.com" class="flex items-center gap-2 px-5 py-2 border border-slate-700 rounded-full bg-slate-900/50 hover:bg-slate-800 hover:scale-105 transition-all duration-300 glass-boton">
+          <DownloadIcon class="w-5 h-5 " />
+          <span>Descargar CV</span>
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
-          class="glass-style w-12 h-12 border rounded-full flex items-center justify-center text-white hover:scale-110 transition"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
+        <a href="#" class="flex items-center p-3 border rounded-full hover:scale-110 transition-all duration-300 glass-boton">
+          <EmailIcon class="w-5 h-5 " />
         </a>
-
-        <a
-          href="mailto:luisgerdx521@gmail.com"
-          class="glass-style w-12 h-12 border rounded-full flex items-center justify-center text-white hover:scale-110 transition"
-        >
-          <i class="fa-solid fa-envelope"></i>
+        
+        <a href="#" class="flex items-center p-3 border rounded-full hover:scale-110 transition-all duration-300 glass-boton">
+          <WhatsappIcon class="w-5 h-5 " />
         </a>
-
+        
       </div>
     </div>
-  </div>
 
-  <!-- FOTO -->
-  <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden ">
-    <img
-      src="/foto-luis.png"
-      alt="Foto de Luis Salazar"
-      class="w-full h-full object-cover"
-    />
-  </div>
+    <div class="flex-shrink-0 order-1 md:order-2">
+      <div class="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full overflow-hidden glass-container">
+        <img src="/foto-luis.png" alt="Profile" class="w-full h-full object-cover">
+      </div>
+    </div>
 
+  </div>
 </section>
