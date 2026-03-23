@@ -29,14 +29,14 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
   </div>
 
   <!-- Fila superior: card grande + card normal -->
-  <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 lg:gap-5 mb-4 lg:mb-5">
+  <div class="hidden lg:grid grid-cols-[1.3fr_1fr] gap-5 mb-5">
 
     <!-- Card grande -->
     {p0 && (
       <a href={p0.data.link} target="_blank" rel="noopener noreferrer"
          class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5"
          style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);">
-        <div class="relative h-48 lg:h-72 overflow-hidden">
+        <div class="relative h-72 overflow-hidden">
           <img src={p0.data.image} alt={p0.data.title}
                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -46,11 +46,11 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
             {p0.data.tags[0]}
           </div>
         </div>
-        <div class="px-4 lg:px-5 py-4 lg:py-5">
+        <div class="px-5 py-5">
           <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
             {p0.data.title}
           </div>
-          <div class="text-sm leading-normal mb-2 line-clamp-2 lg:line-clamp-2" style="color: rgba(160,190,230,0.60);">
+          <div class="text-sm leading-normal mb-2 line-clamp-2" style="color: rgba(160,190,230,0.60);">
             {p0.data.description}
           </div>
           <div class="flex flex-wrap gap-1.5">
@@ -68,7 +68,7 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
       <a href={p1.data.link} target="_blank" rel="noopener noreferrer"
          class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5 flex flex-col"
          style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);">
-        <div class="relative h-48 lg:h-64 overflow-hidden shrink-0">
+        <div class="relative h-64 overflow-hidden shrink-0">
           <img src={p1.data.image} alt={p1.data.title}
                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -78,7 +78,7 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
             {p1.data.tags[0]}
           </div>
         </div>
-        <div class="px-4 lg:px-5 py-4 lg:py-5 flex-1 flex flex-col justify-between">
+        <div class="px-5 py-5 flex-1 flex flex-col justify-between">
           <div>
             <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
               {p1.data.title}
@@ -100,7 +100,7 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
   </div>
 
   <!-- Fila inferior: 3 columnas iguales -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
     {[p2, p3, p4].map((proyecto) => proyecto && (
       <a href={proyecto.data.link} target="_blank" rel="noopener noreferrer"

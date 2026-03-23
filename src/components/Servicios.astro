@@ -22,7 +22,127 @@
     </div>
 
     <!-- Grid de cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-[18px]">
+    <div class="flex flex-col lg:flex-row gap-4 lg:gap-[18px]">
+
+      <!-- Carrusel para móviles -->
+      <div class="lg:hidden w-full">
+        <div class="relative overflow-hidden">
+          <div id="servicesCarousel" class="flex transition-transform duration-300 ease-in-out">
+            
+            <!-- Card 1 — Featured -->
+            <div class="glass-container srv-card-base srv-card-featured group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 flex-none w-full">
+              <!-- Shimmer overlay -->
+              <div class="absolute inset-0 rounded-[22px] pointer-events-none"
+                   style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
+
+              <!-- Top accent line -->
+              <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
+
+              <!-- Icon -->
+              <div class="w-6 h-6 mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4fa3ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+
+              <div class="text-sm font-bold text-blue-50 mb-2">Landing Page</div>
+              <p class="text-xs text-white/75 leading-relaxed mb-4">
+                Páginas enfocadas 100% en conversión para captar leads, promover lanzamientos o vender un producto con impacto inmediato.
+              </p>
+              <span class="srv-arrow text-xs font-bold text-blue-400 inline-flex items-center gap-1">Ver detalles </span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+              <div class="absolute inset-0 rounded-[22px] pointer-events-none"
+                   style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
+              <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
+
+              <div class="w-6 h-6 mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4fa3ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+
+              <div class="text-sm font-bold text-blue-50 mb-2">Sitio Web Informativo</div>
+              <p class="text-xs text-white/75 leading-relaxed mb-4">
+                Presencia digital completa con múltiples secciones y páginas personalizadas para empresas y profesionales.
+              </p>
+              <span class="srv-arrow text-xs font-bold text-blue-400 inline-flex items-center gap-1">Ver detalles </span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+              <div class="absolute inset-0 rounded-[22px] pointer-events-none"
+                   style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
+              <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
+
+              <div class="w-6 h-6 mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4fa3ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+
+              <div class="text-sm font-bold text-blue-50 mb-2">Tienda en Línea</div>
+              <p class="text-xs text-white/75 leading-relaxed mb-4">
+                E-commerce completo con catálogo, carrito, pasarela de pagos y gestión de pedidos. Tu tienda funcionando en tiempo récord.
+              </p>
+              <span class="srv-arrow text-xs font-bold text-blue-400 inline-flex items-center gap-1">Ver detalles </span>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+              <div class="absolute inset-0 rounded-[22px] pointer-events-none"
+                   style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
+              <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
+
+              <div class="w-6 h-6 mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4fa3ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+
+              <div class="text-sm font-bold text-blue-50 mb-2">Mantenimiento Web</div>
+              <p class="text-xs text-white/75 leading-relaxed mb-4">
+                Soporte técnico, actualizaciones, optimización de velocidad y seguridad continua para tu sitio existente.
+              </p>
+              <span class="srv-arrow text-xs font-bold text-blue-400 inline-flex items-center gap-1">Ver detalles </span>
+            </div>
+
+          </div>
+
+          <!-- Botones de navegación -->
+          <div class="flex justify-center gap-2 mt-4">
+            <button id="prevBtnServices" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button id="nextBtnServices" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Indicadores -->
+          <div class="flex justify-center gap-2 mt-3">
+            <button class="services-carousel-dot w-2 h-2 rounded-full bg-white/50 transition-colors" data-slide="0"></button>
+            <button class="services-carousel-dot w-2 h-2 rounded-full bg-white/20 transition-colors" data-slide="1"></button>
+            <button class="services-carousel-dot w-2 h-2 rounded-full bg-white/20 transition-colors" data-slide="2"></button>
+            <button class="services-carousel-dot w-2 h-2 rounded-full bg-white/20 transition-colors" data-slide="3"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout normal para desktop -->
+      <div class="hidden lg:flex lg:flex-row lg:gap-[18px] w-full">
 
       <!-- Card 1 — Featured -->
       <div class="glass-container srv-card-base srv-card-featured group relative overflow-hidden rounded-[22px] px-4 py-5 lg:px-6 lg:py-[30px] cursor-pointer transition-all duration-200 hover:-translate-y-2"
@@ -117,3 +237,88 @@
     </div>
   </div>
 </section>
+
+<script>
+// Carrusel para móviles - Servicios
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('servicesCarousel');
+  const prevBtn = document.getElementById('prevBtnServices');
+  const nextBtn = document.getElementById('nextBtnServices');
+  const dots = document.querySelectorAll('.services-carousel-dot');
+  
+  if (!carousel) return;
+  
+  let currentSlide = 0;
+  const totalSlides = 4;
+  
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Actualizar indicadores
+    dots.forEach((dot, index) => {
+      if (index === currentSlide) {
+        dot.classList.remove('bg-white/20');
+        dot.classList.add('bg-white/50');
+      } else {
+        dot.classList.remove('bg-white/50');
+        dot.classList.add('bg-white/20');
+      }
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+  
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+  
+  function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+  
+  // Event listeners
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+  
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToSlide(index));
+  });
+  
+  // Touch/swipe support
+  let startX = 0;
+  let currentX = 0;
+  let isDragging = false;
+  
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+  
+  carousel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+  });
+  
+  carousel.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  });
+  
+  // Inicializar
+  updateCarousel();
+});
+</script>
