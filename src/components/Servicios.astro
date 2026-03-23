@@ -30,7 +30,7 @@
           <div id="servicesCarousel" class="flex transition-transform duration-300 ease-in-out">
             
             <!-- Card 1 — Featured -->
-            <div class="glass-container srv-card-base srv-card-featured group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 flex-none w-full">
+            <div class="srv-card-base srv-card-featured group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 flex-none w-full carousel-card">
               <!-- Shimmer overlay -->
               <div class="absolute inset-0 rounded-[22px] pointer-events-none"
                    style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
@@ -55,7 +55,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+            <div class="srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full carousel-card">
               <div class="absolute inset-0 rounded-[22px] pointer-events-none"
                    style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
               <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+            <div class="srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full carousel-card">
               <div class="absolute inset-0 rounded-[22px] pointer-events-none"
                    style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
               <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
@@ -97,7 +97,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="glass-container srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full">
+            <div class="srv-card-base group relative overflow-hidden rounded-[22px] px-4 py-5 cursor-pointer transition-all duration-200 hover:-translate-y-2 hover:border-blue-400/28 flex-none w-full carousel-card">
               <div class="absolute inset-0 rounded-[22px] pointer-events-none"
                    style="background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 60%);"></div>
               <div class="srv-top-line absolute top-0 left-0 right-0 rounded-t-[22px]"></div>
@@ -322,3 +322,32 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
 });
 </script>
+
+<style>
+/* Eliminar sombra de las cards del carrusel en móviles */
+.carousel-card {
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  border: 1px solid rgba(79, 163, 255, 0.20) !important;
+}
+
+.carousel-card.srv-card-featured {
+  background: linear-gradient(145deg, rgba(45,133,240,0.18) 0%, rgba(79,163,255,0.08) 100%) !important;
+  border: 1px solid rgba(79,163,255,0.30) !important;
+}
+
+/* Asegurar que no haya sombra en el contenedor del carrusel */
+.lg:hidden .carousel-card {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Eliminar cualquier sombra residual */
+.lg:hidden .srv-card-base {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+</style>

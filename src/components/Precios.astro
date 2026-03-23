@@ -35,7 +35,7 @@ import StoreIcon from './icons/store-icon.astro';
           <div id="priceCarousel" class="flex transition-transform duration-300 ease-in-out">
             
             <!-- ── Landing Page ── -->
-            <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full">
+            <div class="price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full carousel-card-price">
 
               <!-- Ícono + nombre -->
               <div>
@@ -91,7 +91,7 @@ import StoreIcon from './icons/store-icon.astro';
             </div>
 
             <!-- ── Sitio Web Informativo ── -->
-            <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full">
+            <div class="price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full carousel-card-price">
 
               <!-- Badge popular -->
               <div class="absolute -top-px left-1/2 -translate-x-1/2">
@@ -162,7 +162,7 @@ import StoreIcon from './icons/store-icon.astro';
             </div>
 
             <!-- ── Tienda en Línea ── -->
-            <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full">
+            <div class="price-card-highlight relative overflow-hidden rounded-2xl py-6 px-4 flex flex-col gap-4 transition-all duration-200 hover:-translate-y-2 flex-none w-full carousel-card-price">
 
               <div>
                 <div class="w-6 h-6 mb-3">
@@ -522,6 +522,35 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCarousel();
 });
 </script>
+
+<style>
+/* Eliminar sombra de las cards del carrusel de precios en móviles */
+.carousel-card-price {
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  border: 1px solid rgba(79, 163, 255, 0.20) !important;
+}
+
+.carousel-card-price.price-card-highlight {
+  background: linear-gradient(145deg, rgba(45,133,240,0.18) 0%, rgba(79,163,255,0.08) 100%) !important;
+  border: 1px solid rgba(79,163,255,0.30) !important;
+}
+
+/* Asegurar que no haya sombra en el contenedor del carrusel */
+.lg:hidden .carousel-card-price {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Eliminar cualquier sombra residual */
+.lg:hidden .price-card-highlight {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+</style>
 
     <!-- Nota inferior -->
     <p class="text-center text-xs lg:text-[0.78rem] text-blue-300/45 mt-6 lg:mt-8">
