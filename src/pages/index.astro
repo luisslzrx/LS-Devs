@@ -1,27 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Proyecto from "../components/Proyecto.astro";
-import Experiencia from "../components/Experiencia.astro";
-import Habilidades from "../components/Habilidades.astro";
+import Stats from "../components/stats.astro";
+import Servicios from "../components/Servicios.astro";
+import Proceso from "../components/Proceso.astro";
+import Beneficios from "../components/Beneficios.astro";
 import Contacto from "../components/Contacto.astro";
+import Precios from "../components/Precios.astro";
+import CTA from "../components/CTA.astro";
+import Proyectos from "../components/Proyecto.astro";
 ---
 
 <Layout>
-  <main class="w-full max-w-[900px] mx-auto px-6 md:px-8">
-    <section id="inicio">
+  <main class="w-full max-w-[1200px] mx-auto px-8">
+    <section id="inicio" class="min-h-screen">
       <Hero />
     </section>
-    <section id="experiencia" class="my-24">
-      <Experiencia />
+    <section>
+      <Stats />
     </section>
-     <section id="proyectos" class="mt-24">
-      <Proyecto />
+    <section>
+      <Servicios />
     </section>
-    <section id="habilidades" class="mt-24">
-      <Habilidades />
+    <section id="proceso">
+      <Proceso />
     </section>
-    <section id="contacto" class="mt-24">
+    <section>
+      <Proyectos />
+    </section>
+    <section>
+      <Beneficios />
+    </section>
+    <section>
+      <CTA />
+    </section>
+    <section>
+      <Precios />
+    </section>
+    <section>
       <Contacto />
     </section>
   </main>

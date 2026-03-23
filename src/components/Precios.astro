@@ -1,0 +1,222 @@
+---
+import DesktopIcon from './icons/desktop-icon.astro';
+import CheckIcon from './icons/check-icon.astro';
+import WebIcon from './icons/web-icon.astro';
+import StoreIcon from './icons/store-icon.astro';
+---
+
+<section id="precios">
+  <div class="max-w-6xl mx-auto py-16 lg:py-[90px]">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-12 lg:mb-[60px]">
+      <div class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-blue-400 mb-4 lg:mb-[22px] px-4 py-2 rounded-full"
+           style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.22);">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
+        Precios
+      </div>
+      <h2 class="text-3xl lg:text-[2.7rem] font-extrabold tracking-tight leading-tight text-blue-50 mb-4">
+        Inversión clara,<br>
+        <span class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+          sin sorpresas
+        </span>
+      </h2>
+      <p class="text-sm lg:text-base text-white/75 max-w-lg lg:max-w-[500px] mx-auto leading-relaxed lg:leading-[1.70]">
+        Cada plan incluye diseño, desarrollo y entrega. Sin costos ocultos, sin letras pequeñas. Solo resultados.
+      </p>
+    </div>
+
+    <!-- Flex de precios -->
+    <div class="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start">
+
+      <!-- ── Landing Page ── -->
+      <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 lg:py-8 px-4 lg:px-6 flex flex-col gap-4 lg:gap-5 transition-all duration-200 hover:-translate-y-2 flex-1">
+
+        <!-- Ícono + nombre -->
+        <div>
+          <div class="w-6 h-6 lg:w-7 lg:h-7 mb-3 lg:mb-4">
+            <DesktopIcon />
+          </div>
+          <div class="text-xs font-bold tracking-wider uppercase text-blue-300/50 mb-1">Landing Page</div>
+          <div class="text-xs lg:text-sm leading-tight">Ideal para captar leads y promover un producto o servicio específico.</div>
+        </div>
+
+        <!-- Precio -->
+        <div>
+          <div class="flex items-end gap-1 mb-1">
+            <span class="text-xs lg:text-sm font-semibold text-blue-300/50 mb-2">desde</span>
+            <span class="text-3xl lg:text-4xl font-black tracking-tight leading-none text-style bg-clip-text text-transparent">$5,500</span>
+            <span class="text-xs lg:text-sm text-blue-300/50 mb-2">MXN</span>
+          </div>
+          <div class="text-xs text-blue-300/50">Entrega en 3–5 días hábiles</div>
+        </div>
+
+        <!-- Divisor -->
+        <div class="h-px w-full" style="background: rgba(255,255,255,0.08);"></div>
+
+        <!-- Features -->
+        <ul class="flex flex-col gap-2 lg:gap-3">
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />           
+            Diseño UX/UI personalizado
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Responsive en todos los dispositivos
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Formulario de contacto
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            SEO básico incluido
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />           
+            1 ronda de revisiones
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a href="#contacto"
+           class="btn-glass btn-glass-highlight relative overflow-hidden w-full h-10 lg:h-12 flex items-center justify-center gap-2 font-bold text-xs lg:text-sm rounded-full cursor-pointer mt-auto transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
+           Cotizar ahora →
+        </a>
+      </div>
+
+      <!-- ── Sitio Web Informativo — POPULAR ── -->
+      <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 lg:py-8 px-4 lg:px-6 flex flex-col gap-4 lg:gap-5 transition-all duration-200 hover:-translate-y-2 flex-1">
+
+        <!-- Badge popular -->
+        <div class="absolute top-[-1px] left-1/2 -translate-x-1/2">
+          <div class="price-popular-badge px-3 lg:px-4 py-[5px] rounded-b-xl text-[0.60rem] lg:text-[0.68rem] font-bold text-white tracking-[0.08em] uppercase whitespace-nowrap">
+            Más popular
+          </div>
+        </div>
+
+        <!-- Línea de acento superior -->
+        <div class="absolute top-0 left-0 right-0 h-[2px] rounded-t-[22px]"
+             style="background: linear-gradient(90deg, #2d85f0, #4fa3ff, #38d9c0);"></div>
+
+        <!-- Ícono + nombre -->
+        <div class="mt-4">
+          <div class="w-6 h-6 lg:w-7 lg:h-7 mb-3 lg:mb-4">
+            <WebIcon />
+          </div>
+          <div class="text-xs font-bold tracking-wider uppercase text-blue-300/50 mb-1">Sitio Web Informativo</div>
+          <div class="text-xs lg:text-sm leading-tight">Presencia profesional completa para empresas y profesionales independientes.</div>
+        </div>
+
+        <!-- Precio -->
+        <div>
+          <div class="flex items-end gap-1 mb-1">
+            <span class="text-xs lg:text-sm font-semibold text-blue-300/50 mb-2">desde</span>
+            <span class="text-3xl lg:text-4xl font-black tracking-tight leading-none text-style bg-clip-text text-transparent">$12,000</span>
+            <span class="text-xs lg:text-sm text-blue-300/50 mb-2">MXN</span>
+          </div>
+          <div class="text-xs text-blue-300/50">Entrega en 7–10 días hábiles</div>
+        </div>
+
+        <!-- Divisor -->
+        <div class="h-px w-full" style="background: rgba(255,255,255,0.08);"></div>
+
+        <!-- Features -->
+        <ul class="flex flex-col gap-2 lg:gap-3">
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />           
+            Hasta 6 secciones / páginas
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Diseño UX/UI a medida
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            SEO optimizado + velocidad
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Formulario + Google Analytics
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            2 rondas de revisiones
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Soporte 30 días post-entrega
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a href="#contacto"
+           class="btn-glass btn-glass-highlight relative overflow-hidden w-full h-10 lg:h-12 flex items-center justify-center gap-2 font-bold text-xs lg:text-sm rounded-full cursor-pointer mt-auto transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
+           Cotizar ahora →
+        </a>
+      </div>
+
+      <!-- ── Tienda en Línea ── -->
+      <div class="glass-container price-card-highlight relative overflow-hidden rounded-2xl py-6 lg:py-8 px-4 lg:px-6 flex flex-col gap-4 lg:gap-5 transition-all duration-200 hover:-translate-y-2 flex-1">
+
+        <div>
+          <div class="w-6 h-6 lg:w-7 lg:h-7 mb-3 lg:mb-4">
+            <StoreIcon />
+          </div>
+          <div class="text-xs font-bold tracking-wider uppercase text-blue-300/50 mb-1">Tienda en Línea</div>
+          <div class="text-xs lg:text-sm leading-tight">E-commerce completo listo para vender desde el primer día.</div>
+        </div>
+
+        <div>
+          <div class="flex items-end gap-1 mb-1">
+            <span class="text-xs lg:text-sm font-semibold text-blue-300/50 mb-2">desde</span>
+            <span class="text-3xl lg:text-4xl font-black tracking-tight leading-none text-style bg-clip-text text-transparent">$22,000</span>
+            <span class="text-xs lg:text-sm text-blue-300/50 mb-2">MXN</span>
+          </div>
+          <div class="text-xs text-blue-300/50">Entrega en 14–21 días hábiles</div>
+        </div>
+
+        <!-- Divisor -->
+        <div class="h-px w-full" style="background: rgba(255,255,255,0.08);"></div>
+
+        <!-- Features -->
+        <ul class="flex flex-col gap-2 lg:gap-3">
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />           
+            Catálogo + carrito de compras
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Pasarela de pagos integrada
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Panel de administración
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Gestión de inventario
+          </li>
+          <li class="flex items-start gap-2 lg:gap-2.5 text-xs lg:text-sm">
+            <CheckIcon />   
+            Soporte técnico 90 días
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a href="#contacto"
+           class="btn-glass btn-glass-highlight relative overflow-hidden w-full h-10 lg:h-12 flex items-center justify-center gap-2 font-bold text-xs lg:text-sm rounded-full cursor-pointer mt-auto transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
+           Cotizar ahora →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Nota inferior -->
+    <p class="text-center text-xs lg:text-[0.78rem] text-blue-300/45 mt-6 lg:mt-8">
+      ¿Tienes un proyecto especial o necesitas algo a medida?
+      <a href="#contacto" class="text-blue-400 font-semibold hover:underline ml-1">Hablemos →</a>
+    </p>
+
+  </div>
+</section>

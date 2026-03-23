@@ -1,52 +1,161 @@
----
-import WhatsappIcon from "./icons/whatsapp-icon.astro";
-import EmailIcon from "./icons/email-icon.astro";
-import DownloadIcon from "./icons/download-icon.astro";
----
+<section class="min-h-screen flex items-center">
+  <div class="mx-auto  lg:grid lg:grid-cols-2 lg:gap-32 items-center lg:py-0">
 
-<section class="flex flex-col items-center justify-center min-h-[100vh] px-6 py-12">
-  <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10 max-w-6xl w-full">
-    
-    <div class="flex-1 order-2 md:order-1 text-center md:text-left">
-      
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-        hey, <span class="text-cyan-400">soy Luis Salazar</span>
+    <!-- Columna izquierda -->
+    <div class=" mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1 mt-16 lg:mt-0">
+
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2.5 bg-white/7 backdrop-blur-md border border-white/14 rounded-full px-4 py-2 text-sm font-semibold text-white/75 mb-8">
+        <span class="w-2 h-2 rounded-full bg-green-500 shrink-0"></span>
+        Disponible para nuevos proyectos
+      </div>
+
+      <!-- Título -->
+      <h1 class="font-black text-4xl lg:text-6xl leading-none lg:leading-none tracking-tight text-blue-50 mb-6">
+        Sitios web que<br>
+        <span class="text-style">
+          convierten
+        </span><br>
+        y venden.
       </h1>
 
-      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
-        Desarrollador web <span class="text-sky-400">full stack</span>
-      </h2>
-      
-      <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-md sm:max-w-xl md:max-w-2xl mx-auto md:mx-0">
-        Transformo operaciones complejas a través de 
-        <span class="text-teal-500">ecosistemas inteligentes usando Ingeniería de Software y Automatización</span>. 
-        <span class="font-medium">Experto en integración de Datos, IA y Plataformas Empresariales.</span> 
-        No solo escribo código, construyo soluciones.
+      <!-- Subtítulo -->
+      <p class="text-lg lg:text-base font-normal text-white/75 leading-relaxed mb-10">
+        Diseño y desarrollo landing pages, sitios corporativos y tiendas en línea que transforman visitantes en clientes reales. Moderno, rápido y enfocado en resultados.
       </p>
 
-      <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+      <!-- CTAs -->
+      <div class="flex gap-3.5 flex-wrap justify-center lg:justify-start">
 
-        <a href="/documents/LuisSalazarResume.pdf" target="_blank" class="flex items-center gap-2 px-5 py-2 border border-slate-700 rounded-full bg-slate-900/50 hover:bg-slate-800 hover:scale-105 transition-all duration-300 glass-boton">
-          <DownloadIcon class="w-5 h-5 " />
-          <span>Ver CV</span>
+        <!-- Botón primario -->
+        <a href="#contacto"
+           class="btn-glass-highlight btn-glass-color font-bold text-base px-6 py-3.5 rounded-full text-white transition-transform duration-200 hover:-translate-y-0.5"
+           >
+          Cotizar gratis
         </a>
 
-        <a href="mailto:luisgerdx521@gmail.com" class="flex items-center p-3 border rounded-full hover:scale-110 transition-all duration-300 glass-boton">
-          <EmailIcon class="w-5 h-5 " />
+        <!-- Botón ghost -->
+        <a href="#portafolio"
+           class="btn-glass-highlight btn-glass relative overflow-hidden inline-flex items-center gap-2.5 font-bold text-base px-6 py-3.5 rounded-full text-blue-50 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/11"
+        >
+          Ver proyectos →
         </a>
-        
-        <a href="https://wa.me/5228835112" target="_blank" class="flex items-center p-3 border rounded-full hover:scale-110 transition-all duration-300 glass-boton">
-          <WhatsappIcon class="w-5 h-5 " />
-        </a>
-        
+
       </div>
     </div>
 
-    <div class="flex-shrink-0 order-1 md:order-2">
-      <div class="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full overflow-hidden glass-container">
-        <img src="/foto-luis.png" alt="Profile" class="w-full h-full object-cover">
-      </div>
-    </div>
+    <!-- Columna derecha — visual -->
+    <div class="relative h-96 lg:h-[500px] flex items-center justify-center order-1 lg:order-2">
 
+      <!-- Anillos orbitales -->
+      <div class="absolute w-80 h-80 lg:w-[480px] lg:h-[480px] rounded-full border border-dashed border-blue-400/18 pointer-events-none"></div>
+      <div class="absolute w-60 h-60 lg:w-96 lg:h-96 rounded-full border border-dashed border-emerald-400/12 pointer-events-none"></div>
+
+      <!-- Browser mockup -->
+      <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-80 lg:w-[430px] rounded-2xl overflow-hidden"
+           style="background: rgba(255,255,255,0.07); backdrop-filter: blur(40px) saturate(180%); border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 30px 100px rgba(0,0,0,0.60), inset 0 1px 0 rgba(255,255,255,0.15);">
+
+        <!-- Chrome bar -->
+        <div class="h-10 flex items-center gap-2 px-3.5"
+             style="background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.10);">
+          <div class="w-2 h-2 rounded-full bg-red-500"></div>
+          <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+          <div class="w-2 h-2 rounded-full bg-green-600"></div>
+          <div class="flex-1 ml-2.5 h-5 rounded-lg flex items-center px-2.5 text-xs text-blue-300/50"
+               style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.10);">
+            miproyecto.com
+          </div>
+        </div>
+
+        <!-- Browser body -->
+        <div class="p-4 flex flex-col gap-2.5">
+
+          <!-- Hero strip -->
+          <div class="h-16 rounded-xl flex items-center px-3.5 gap-3"
+               style="background: linear-gradient(135deg, rgba(45,133,240,0.22), rgba(79,163,255,0.10)); border: 1px solid rgba(79,163,255,0.18);">
+            <div class="flex flex-col gap-1.5 flex-1">
+              <div class="h-2 w-3/4 rounded bg-white/20"></div>
+              <div class="h-1.5 w-1/2 rounded bg-white/10"></div>
+            </div>
+            <div class="h-6 w-20 rounded-full shrink-0"
+                 style="background: linear-gradient(135deg, rgba(45,133,240,0.70), rgba(18,86,199,0.60)); border: 1px solid rgba(79,163,255,0.35);"></div>
+          </div>
+
+          <!-- Mini cards -->
+          <div class="grid grid-cols-3 gap-2">
+            <!-- card x3 -->
+            <div class="h-16 rounded-lg p-2 flex flex-col gap-1"
+                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);">
+              <div class="w-4 h-4 rounded bg-blue-400/20"></div>
+              <div class="h-1 rounded bg-white/12"></div>
+              <div class="h-1 w-2/3 rounded bg-white/7"></div>
+            </div>
+            <div class="h-16 rounded-lg p-2 flex flex-col gap-1"
+                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);">
+              <div class="w-4 h-4 rounded bg-blue-400/20"></div>
+              <div class="h-1 rounded bg-white/12"></div>
+              <div class="h-1 w-2/3 rounded bg-white/7"></div>
+            </div>
+            <div class="h-16 rounded-lg p-2 flex flex-col gap-1"
+                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);">
+              <div class="w-4 h-4 rounded bg-blue-400/20"></div>
+              <div class="h-1 rounded bg-white/12"></div>
+              <div class="h-1 w-2/3 rounded bg-white/7"></div>
+            </div>
+          </div>
+
+          <!-- Footer strip -->
+          <div class="h-4 rounded-lg"
+               style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);"></div>
+        </div>
+      </div>
+
+      <!-- Panel flotante 1 — Conversiones -->
+      <div class="animate-float absolute bottom-20 -left-8 lg:-left-8 flex items-center gap-3 rounded-2xl px-4 py-3.5"
+           style="background: rgba(255,255,255,0.08); backdrop-filter: blur(30px) saturate(180%); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 12px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.12);">
+        <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center"
+             style="background: linear-gradient(135deg, rgba(34,197,94,0.25), rgba(134,239,172,0.12)); border: 1px solid rgba(34,197,94,0.25);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-bold tracking-wider uppercase text-blue-300/55">Conversiones</span>
+          <span class="text-base font-extrabold text-blue-50">
+            +87% <em class="not-italic text-sm font-semibold text-green-400 ml-1">este mes</em>
+          </span>
+        </div>
+      </div>
+
+      <!-- Panel flotante 2 — Entrega -->
+      <div class="animate-float-alt absolute top-12 -right-5 lg:-right-5 flex items-center gap-3 rounded-2xl px-4 py-3.5"
+           style="background: rgba(255,255,255,0.08); backdrop-filter: blur(30px) saturate(180%); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 12px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.12);">
+        <div class="w-10 h-10 rounded-lg shrink-0 flex items-center justify-center"
+             style="background: linear-gradient(135deg, rgba(45,133,240,0.30), rgba(79,163,255,0.15)); border: 1px solid rgba(79,163,255,0.30);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4fa3ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="text-xs font-bold tracking-wider uppercase text-blue-300/55">Entrega en</span>
+          <span class="text-base font-extrabold text-blue-50">7 días</span>
+        </div>
+      </div>
+
+      <!-- Anillo rotatorio de la foto -->
+      <div class="animate-spin-slow absolute bottom-6 -right-4 lg:-right-4 w-32 h-32 rounded-full pointer-events-none"
+           style="border: 1px dashed rgba(79,163,255,0.25);">
+        <div class="absolute w-2 h-2 rounded-full bg-blue-400 top-[-3px] left-1/2 -translate-x-1/2"></div>
+      </div>
+
+      <!-- Círculo de foto — liquid glass -->
+      <div class="animate-float-slow absolute bottom-8 -right-2 lg:-right-2 w-28 h-28 rounded-full flex items-center justify-center overflow-hidden"
+           style="background: rgba(255,255,255,0.08); backdrop-filter: blur(30px) saturate(180%); border: 1.5px solid rgba(255,255,255,0.22); box-shadow: 0 8px 40px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.20);">
+        <img src="/foto-luis.png" alt="Luis" class="w-full h-full object-cover rounded-full" />
+      </div>
+
+    </div>
   </div>
 </section>
