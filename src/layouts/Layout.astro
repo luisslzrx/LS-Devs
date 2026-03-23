@@ -17,14 +17,14 @@ interface Props {
 }
 
 const {
-	title = "Luis Salazar | Desarrollador Front-End & Web Developer",
-	description = "Desarrollador Front-End con experiencia en HTML, CSS, JavaScript, Astro, Tailwind, Python Django, PHP y WordPress. Interesado en UX/UI y SEO técnico.",
-	keywords = "desarrollador front end, desarrollador web especializado en HTML CSS JS, desarrollador Astro México, desarrollador WordPress profesional, desarrollador web con enfoque UX UI",
+	title = "LS Studio | Desarrollo Web Freelance México",
+	description = "Desarrollo de páginas web en Ciudad de México. Landing pages, tiendas online y diseño web para negocios. Sitios rápidos y optimizados para atraer clientes.",
+	keywords = "desarrollo de páginas web en CDMX, diseñador web freelance México, diseño web para negocios, desarrollo web profesional México, creación de páginas web",
 	image = "/luisdev-logo.png",
 	url = "https://luissalazar.com.mx",
 	author = "Luis Salazar",
 	type = "website",
-	siteName = "Luis Salazar - Desarrollador Web",
+	siteName = "Desarrollo Web Profesional México | Luis Salazar",
 	locale = "es_MX",
 	card = "summary_large_image"
 } = Astro.props;
@@ -49,7 +49,9 @@ const {
 		<meta name="robots" content="index, follow" />
 		<meta name="language" content="Spanish" />
 		<meta name="geo.region" content="MX-VER" />
-		<meta name="geo.placename" content="Veracruz, México" />
+		<meta name="geo.placename" content="Ciudad de México, Xalapa, Veracruz" />
+		<meta name="geo.position" content="19.4326;-99.1332" />
+		<meta name="ICBM" content="19.4326,-99.1332" />
 		
 		<!-- Open Graph Meta Tags -->
 		<meta property="og:title" content={title} />
@@ -59,6 +61,9 @@ const {
 		<meta property="og:type" content={type} />
 		<meta property="og:site_name" content={siteName} />
 		<meta property="og:locale" content={locale} />
+		<meta property="og:image:alt" content="Desarrollo de páginas web profesionales en México" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		
 		<!-- Twitter Card Meta Tags -->
 		<meta name="twitter:card" content={card} />
@@ -66,27 +71,76 @@ const {
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
 		<meta name="twitter:creator" content={author} />
+		<meta name="twitter:image:alt" content="Desarrollo web profesional en Ciudad de México" />
 		
 		<!-- Canonical URL -->
 		<link rel="canonical" href={url} />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="theme-color" content="#2d85f0" />
+		<meta name="msapplication-TileColor" content="#2d85f0" />
+		<meta name="application-name" content="Luis Salazar - Desarrollo Web" />
+		<meta name="apple-mobile-web-app-title" content="Luis Salazar Dev" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
 		<!-- Structured Data (JSON-LD) -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Luis Salazar",
-			"jobTitle": "Desarrollador Front-End",
-			"description": "Desarrollador Front-End con experiencia en HTML, CSS, JavaScript, Astro, Tailwind, Python Django, PHP y WordPress.",
+			"@type": "ProfessionalService",
+			"name": "Luis Salazar - Desarrollo Web Profesional",
+			"description": "Desarrollo de páginas web profesionales en Ciudad de México. Landing pages, tiendas online y diseño web para negocios.",
 			"url": url,
 			"image": image,
+			"telephone": "+52 1 55 1234 5678",
+			"priceRange": "$5000 - $50000",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Ciudad de México",
+				"addressRegion": "CMX",
+				"addressCountry": "MX",
+				"postalCode": "06000"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 19.4326,
+				"longitude": -99.1332
+			},
+			"openingHours": "Mo-Fr 09:00-18:00",
 			"sameAs": [
 				"https://github.com/luisslzrx",
 				"https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
 			],
+			"serviceType": [
+				"Desarrollo de Páginas Web",
+				"Diseño Web Profesional",
+				"Creación de Landing Pages",
+				"Desarrollo de Tiendas Online",
+				"Mantenimiento Web",
+				"SEO Técnico"
+			],
+			"areaServed": [
+				{
+					"@type": "City",
+					"name": "Ciudad de México",
+					"@id": "https://en.wikipedia.org/wiki/Mexico_City"
+				},
+				{
+					"@type": "City", 
+					"name": "Xalapa",
+					"@id": "https://en.wikipedia.org/wiki/Xalapa"
+				},
+				{
+					"@type": "State",
+					"name": "Veracruz",
+					"@id": "https://en.wikipedia.org/wiki/Veracruz"
+				}
+			],
 			"knowsAbout": [
 				"HTML",
-				"CSS",
+				"CSS", 
 				"JavaScript",
 				"Astro",
 				"Tailwind CSS",
@@ -94,12 +148,21 @@ const {
 				"PHP",
 				"WordPress",
 				"UX/UI",
-				"SEO técnico"
+				"SEO técnico",
+				"Diseño de landing pages",
+				"Desarrollo de ecommerce",
+				"Desarrollo web responsive"
 			],
-			"address": {
-				"@type": "PostalAddress",
-				"addressLocality": "Veracruz",
-				"addressCountry": "México"
+			"offers": {
+				"@type": "Offer",
+				"itemOffered": "Servicio de desarrollo web",
+				"priceCurrency": "MXN",
+				"price": "5000",
+				"availability": "https://schema.org/InStock",
+				"seller": {
+					"@type": "Person",
+					"name": "Luis Salazar"
+				}
 			}
 		}
 		</script>
