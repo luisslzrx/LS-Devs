@@ -94,17 +94,17 @@ html.light body {
     pointer-events: none;
   }
 
-  .text-style {
-  background: linear-gradient(
-    to bottom right,
-    #4fa3ff,
-    #a5d4ff,
-    #38d9c0
-  );
+.text-gradient {
+  background: linear-gradient(to right, #60a5fa, #34d399);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  -webkit-text-fill-color: transparent;
+}
+
+.glass-tag {
+  background: rgba(79, 163, 255, 0.10);
+  border: 1px solid rgba(79, 163, 255, 0.22);
+  background-color: rgba(79, 163, 255, 0.10);
 }
 
   @keyframes floatBob {

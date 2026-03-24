@@ -28,7 +28,7 @@
 
         <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-blue-50 mb-4 lg:mb-4">
           ¿Listo para<br>
-          <span class="bg-gradient-to-br from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+          <span class="text-gradient">
             empezar?
           </span>
         </h2>
@@ -88,7 +88,7 @@
       </div>
 
       <!-- ── Columna derecha — formulario ── -->
-      <div class="flex flex-col gap-3 lg:gap-4">
+      <form id="contact-form" class="flex flex-col gap-3 lg:gap-4">
 
         <!-- Fila: Nombre + Email -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
@@ -98,18 +98,23 @@
             </label>
             <input
               type="text"
+              name="user_name"
               placeholder="Tu nombre completo"
+              required
               class="glass-input h-10 lg:h-12 px-4 lg:px-5 rounded-2xl text-xs lg:text-sm text-blue-50 font-sans transition-all duration-200"
               style="background: rgba(255,255,255,0.07); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);"
             >
           </div>
+
           <div class="flex flex-col gap-2">
             <label class="text-xs font-bold tracking-wider uppercase text-blue-300/50">
               Email
             </label>
             <input
               type="email"
+              name="user_email"
               placeholder="tu@correo.com"
+              required
               class="glass-input h-10 lg:h-12 px-4 lg:px-5 rounded-2xl text-xs lg:text-sm text-blue-50 font-sans transition-all duration-200"
               style="background: rgba(255,255,255,0.07); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);"
             >
@@ -122,6 +127,7 @@
             Tipo de proyecto
           </label>
           <select
+            name="project_type"
             class="glass-input glass-select h-10 lg:h-12 px-4 lg:px-5 rounded-2xl text-xs lg:text-sm text-blue-300/50 font-sans cursor-pointer appearance-none transition-all duration-200"
             style="background: rgba(255,255,255,0.07); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);"
           >
@@ -140,6 +146,7 @@
               Presupuesto
             </label>
             <select
+              name="budget"
               class="glass-input glass-select h-10 lg:h-12 px-4 lg:px-5 rounded-2xl text-xs lg:text-sm text-blue-300/50 font-sans cursor-pointer appearance-none transition-all duration-200"
               style="background: rgba(255,255,255,0.07); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);"
             >
@@ -149,12 +156,14 @@
               <option>$35,000 MXN+</option>
             </select>
           </div>
+
           <div class="flex flex-col gap-2">
             <label class="text-xs font-bold tracking-wider uppercase text-blue-300/50">
               Teléfono (opcional)
             </label>
             <input
               type="tel"
+              name="phone"
               placeholder="+52 55 0000 0000"
               class="glass-input h-10 lg:h-12 px-4 lg:px-5 rounded-2xl text-xs lg:text-sm text-blue-50 font-sans transition-all duration-200"
               style="background: rgba(255,255,255,0.07); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);"
@@ -168,6 +177,8 @@
             Cuéntame de tu proyecto
           </label>
           <textarea
+            name="message"
+            required
             placeholder="¿Qué necesitas? ¿Tienes referencias? ¿Cuándo lo necesitas?"
             rows="4"
             class="glass-input px-4 lg:px-5 py-3 lg:py-4 rounded-2xl text-xs lg:text-sm text-blue-50 font-sans resize-none transition-all duration-200"
@@ -175,7 +186,7 @@
           ></textarea>
         </div>
 
-        <!-- Botón submit -->
+        <!-- Botón -->
         <button
           type="submit"
           class="btn-glass-highlight relative overflow-hidden w-full h-12 lg:h-14 flex items-center justify-center gap-2 font-bold text-sm lg:text-base text-white rounded-full cursor-pointer mt-1 transition-all duration-200 hover:-translate-y-0.5"
@@ -184,7 +195,44 @@
           Solicitar cotización gratis
         </button>
 
-      </div>
+      </form>
+
+      <p id="form-status" class="text-sm mt-2 text-blue-300"></p>
     </div>
   </div>
 </section>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script is:inline>
+  emailjs.init("XbOAQpdJXH3tJep6i");
+
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  const button = form.querySelector('button');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    button.disabled = true;
+    button.innerText = "Enviando...";
+
+    emailjs.sendForm(
+      'service_mpy53hk',
+      'template_9jrfyls',
+      this
+    )
+    .then(() => {
+      status.innerHTML = "<span style='color:#4CAF50'>✔ Mensaje enviado correctamente</span>";
+      form.reset();
+    })
+    .catch((error) => {
+      status.innerHTML = "<span style='color:#ff6b6b'>Error al enviar</span>";
+      console.error("ERROR EMAILJS:", error);
+    })
+    .finally(() => {
+      button.disabled = false;
+      button.innerText = "Solicitar cotización gratis";
+    });
+  });
+</script>
