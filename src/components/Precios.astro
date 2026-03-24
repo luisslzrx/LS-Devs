@@ -3,6 +3,8 @@ import DesktopIcon from './icons/desktop-icon.astro';
 import CheckIcon from './icons/check-icon.astro';
 import WebIcon from './icons/web-icon.astro';
 import StoreIcon from './icons/store-icon.astro';
+import FlechaDerecha from './icons/flecha-derecha.astro';
+import FlechaIzquierda from './icons/flecha-izquierda.astro';
 ---
 
 <section id="precios">
@@ -224,14 +226,10 @@ import StoreIcon from './icons/store-icon.astro';
           <!-- Botones de navegación -->
           <div class="flex justify-center gap-2 mt-4">
             <button id="prevBtn" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 19l-7-7 7-7"/>
-              </svg>
+              <FlechaIzquierda fill="white" class="w-4 h-4"/>
             </button>
             <button id="nextBtn" class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 5l7 7-7 7"/>
-              </svg>
+              <FlechaDerecha fill="white" class="w-4 h-4"/>
             </button>
           </div>
 

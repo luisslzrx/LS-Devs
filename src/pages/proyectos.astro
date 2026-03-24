@@ -5,13 +5,13 @@ import ProyectosCard from "../components/ProyectosCard.astro";
 
 const proyectos = await getCollection("proyectos");
 
-proyectos.sort((a, b) => b.data.date - a.data.date);
+proyectos.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout
-title="Proyectos Web | Luis Salazar"
+title="LS Studio | Sitios web profesionales para tu negocio"
 description="Proyectos de desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías."
-url="https://luissalazar.com.mx/proyectos"
+url="https://studio.luissalazar.com.mx/proyectos"
 >
 
 <main class="w-full max-w-[900px] mx-auto px-6 md:px-8 pb-24">

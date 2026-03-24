@@ -5,13 +5,13 @@ import PostCard from "../components/PostCard.astro";
 
 const posts = await getCollection("blog");
 
-posts.sort((a, b) => b.data.date - a.data.date);
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout
-title="Blog de Desarrollo Web | Luis Salazar"
-description="Artículos sobre desarrollo web, Astro, JavaScript, SEO técnico y experiencias construyendo proyectos web."
-url="https://luissalazar.com.mx/blog"
+  title="Blog de Desarrollo Web | LS Studio"
+  description="Artículos sobre desarrollo de páginas web, landing pages y tiendas online en México. Estrategias para negocios que buscan atraer clientes y crecer en internet."
+  url="https://studio.luissalazar.com.mx/blog"
 >
 
 <main class="w-full max-w-[900px] mx-auto px-6 md:px-8 pb-24">
