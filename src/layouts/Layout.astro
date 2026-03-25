@@ -42,6 +42,16 @@ const {
 		<link rel="icon" type="image/png" href="/logo-LS-transparente.png"/>
 		<meta name="generator" content={Astro.generator} />
 		
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q25R0FC4M"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-8Q25R0FC4M');
+		</script>
+		
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -168,6 +178,7 @@ const {
 		}
 		</script>
 	</head>
+	
 	<body>
 		<Header />
 		<slot />
