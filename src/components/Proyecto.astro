@@ -9,138 +9,202 @@ const [p0, p1, p2, p3, p4] = proyectosLimitados;
 ---
 
 <section class="max-w-6xl mx-auto py-16 lg:py-24">
-
   <!-- Encabezado -->
   <div class="text-center mb-12 lg:mb-16">
-    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-blue-400 mb-4 lg:mb-6 px-4 py-2 rounded-full glass-tag">
+    <div
+      class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-blue-400 mb-4 lg:mb-6 px-4 py-2 rounded-full glass-tag"
+    >
       <span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
       Portafolio
     </div>
-    <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-blue-50 mb-4">
-      Proyectos que<br>
-      <span class="text-gradient">
-        hablan por sí solos
-      </span>
+    <h2
+      class="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-blue-50 mb-4"
+    >
+      Proyectos que<br />
+      <span class="text-gradient"> hablan por sí solos </span>
     </h2>
-    <p class="text-sm lg:text-base text-white/75 max-w-lg lg:max-w-xl mx-auto leading-relaxed">
-      Una selección de trabajos recientes donde diseño, funcionalidad y conversión trabajan juntos.
+    <p
+      class="text-sm lg:text-base text-white/75 max-w-lg lg:max-w-xl mx-auto leading-relaxed"
+    >
+      Una selección de trabajos recientes donde diseño, funcionalidad y
+      conversión trabajan juntos.
     </p>
   </div>
 
   <!-- Fila superior: card grande + card normal -->
   <div class="hidden lg:grid grid-cols-[1.3fr_1fr] gap-5 mb-5">
-
     <!-- Card grande -->
-    {p0 && (
-      <a href={p0.data.link} target="_blank" rel="noopener noreferrer"
-         class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5"
-         style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);">
-        <div class="relative h-72 overflow-hidden">
-          <img src={p0.data.image} alt={p0.data.title}
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-               style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"></div>
-          <div class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
-               style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);">
-            {p0.data.tags[0]}
+    {
+      p0 && (
+        <a
+          href={p0.data.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5"
+          style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);"
+        >
+          <div class="relative h-72 overflow-hidden">
+            <img
+              src={p0.data.image}
+              alt={p0.data.title}
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"
+            />
+            <div
+              class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
+              style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);"
+            >
+              {p0.data.tags[0]}
+            </div>
           </div>
-        </div>
-        <div class="px-5 py-5">
-          <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
-            {p0.data.title}
+          <div class="px-5 py-5">
+            <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
+              {p0.data.title}
+            </div>
+            <div
+              class="text-sm leading-normal mb-2 line-clamp-2"
+              style="color: rgba(160,190,230,0.60);"
+            >
+              {p0.data.description}
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              {p0.data.tags.slice(0, 3).map((tag: string) => (
+                <span
+                  class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
+                  style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div class="text-sm leading-normal mb-2 line-clamp-2" style="color: rgba(160,190,230,0.60);">
-            {p0.data.description}
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            {p0.data.tags.slice(0, 3).map((tag: string) => (
-              <span class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
-                    style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);">{tag}</span>
-            ))}
-          </div>
-        </div>
-      </a>
-    )}
+        </a>
+      )
+    }
 
     <!-- Card normal -->
-    {p1 && (
-      <a href={p1.data.link} target="_blank" rel="noopener noreferrer"
-         class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5 flex flex-col"
-         style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);">
-        <div class="relative h-64 overflow-hidden shrink-0">
-          <img src={p1.data.image} alt={p1.data.title}
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-               style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"></div>
-          <div class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
-               style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);">
-            {p1.data.tags[0]}
-          </div>
-        </div>
-        <div class="px-5 py-5 flex-1 flex flex-col justify-between">
-          <div>
-            <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
-              {p1.data.title}
+    {
+      p1 && (
+        <a
+          href={p1.data.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5 flex flex-col"
+          style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);"
+        >
+          <div class="relative h-64 overflow-hidden shrink-0">
+            <img
+              src={p1.data.image}
+              alt={p1.data.title}
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"
+            />
+            <div
+              class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
+              style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);"
+            >
+              {p1.data.tags[0]}
             </div>
-            <div class="text-sm leading-normal mb-2 line-clamp-3" style="color: rgba(160,190,230,0.60);">
-              {p1.data.description}
+          </div>
+          <div class="px-5 py-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
+                {p1.data.title}
+              </div>
+              <div
+                class="text-sm leading-normal mb-2 line-clamp-3"
+                style="color: rgba(160,190,230,0.60);"
+              >
+                {p1.data.description}
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-auto">
+              {p1.data.tags.slice(0, 3).map((tag: string) => (
+                <span
+                  class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
+                  style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 mt-auto">
-            {p1.data.tags.slice(0, 3).map((tag: string) => (
-              <span class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
-                    style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);">{tag}</span>
-            ))}
-          </div>
-        </div>
-      </a>
-    )}
-
+        </a>
+      )
+    }
   </div>
 
   <!-- Fila inferior: 3 columnas iguales -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-    {[p2, p3, p4].map((proyecto) => proyecto && (
-      <a href={proyecto.data.link} target="_blank" rel="noopener noreferrer"
-         class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5"
-         style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);">
-        <div class="relative h-40 lg:h-40 overflow-hidden">
-          <img src={proyecto.data.image} alt={proyecto.data.title}
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-          <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-               style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"></div>
-          <div class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
-               style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);">
-            {proyecto.data.tags[0]}
-          </div>
-        </div>
-        <div class="px-4 lg:px-5 py-4 lg:py-5">
-          <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
-            {proyecto.data.title}
-          </div>
-          <div class="text-sm leading-normal mb-2 line-clamp-3" style="color: rgba(160,190,230,0.60);">
-            {proyecto.data.description}
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            {proyecto.data.tags.slice(0, 3).map((tag: string) => (
-              <span class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
-                    style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);">{tag}</span>
-            ))}
-          </div>
-        </div>
-      </a>
-    ))}
-
+    {
+      [p2, p3, p4].map(
+        (proyecto) =>
+          proyecto && (
+            <a
+              href={proyecto.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1.5"
+              style="background: rgba(255,255,255,0.055); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.11); box-shadow: 0 8px 40px rgba(0,0,0,0.45);"
+            >
+              <div class="relative h-40 lg:h-40 overflow-hidden">
+                <img
+                  src={proyecto.data.image}
+                  alt={proyecto.data.title}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style="background: linear-gradient(180deg, transparent 40%, rgba(6,12,24,0.65) 100%);"
+                />
+                <div
+                  class="absolute bottom-3 left-3 px-3 py-1 rounded-2xl text-xs font-bold text-blue-400"
+                  style="background: rgba(255,255,255,0.14); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.24);"
+                >
+                  {proyecto.data.tags[0]}
+                </div>
+              </div>
+              <div class="px-4 lg:px-5 py-4 lg:py-5">
+                <div class="text-sm font-bold text-blue-50 mb-1 group-hover:text-blue-400 transition-colors duration-200">
+                  {proyecto.data.title}
+                </div>
+                <div
+                  class="text-sm leading-normal mb-2 line-clamp-3"
+                  style="color: rgba(160,190,230,0.60);"
+                >
+                  {proyecto.data.description}
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  {proyecto.data.tags.slice(0, 3).map((tag: string) => (
+                    <span
+                      class="text-xs font-semibold px-2 py-1 rounded-full text-blue-400"
+                      style="background: rgba(79,163,255,0.10); border: 1px solid rgba(79,163,255,0.20);"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ),
+      )
+    }
   </div>
 
   <!-- CTA -->
   <div class="flex justify-center mt-8 lg:mt-9">
-    <a href="/proyectos"
-       class="btn-glass-highlight relative overflow-hidden inline-flex items-center gap-2 font-bold text-sm px-6 lg:px-8 py-3 lg:py-4 rounded-full text-blue-50 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/10"
-       style="background: rgba(255,255,255,0.07); backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.18); box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);">
+    <a
+      href="/proyectos"
+      class="btn-glass-highlight relative overflow-hidden inline-flex items-center gap-2 font-bold text-sm px-6 lg:px-8 py-3 lg:py-4 rounded-full text-blue-50 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/10"
+      style="background: rgba(255,255,255,0.07); backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.18); box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);"
+    >
       Ver todos los proyectos →
     </a>
   </div>
-
 </section>

@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post }
+    props: { post },
   }));
 }
 
@@ -17,85 +17,69 @@ const { Content } = await post.render();
 ---
 
 <Layout
-title={`${post.data.title} | Blog`}
-description={post.data.description}
-url={`https://luissalazar.com.mx/blog/${post.slug}`}
+  title={`${post.data.title} | Blog`}
+  description={post.data.description}
+  url={`https://luissalazar.com.mx/blog/${post.slug}`}
 >
+  <section class="pt-32 pb-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- HERO DEL ARTICULO -->
 
-<section class="pt-32 pb-24 px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <div class="glass-container overflow-hidden rounded-xl">
+          <img
+            src={post.data.image}
+            alt={post.data.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
 
-<div class="max-w-6xl mx-auto">
+        <div>
+          <h1
+            class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+          >
+            {post.data.title}
+          </h1>
 
-<!-- HERO DEL ARTICULO -->
+          <p class="text-lg mb-6">
+            {post.data.description}
+          </p>
 
-<div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <div class="flex gap-4 text-sm">
+            <span class="glass-boton px-3 py-1 rounded-full">
+              📅 {post.data.date.toLocaleDateString()}
+            </span>
 
-<div class="glass-container overflow-hidden rounded-xl">
-<img 
-src={post.data.image} 
-alt={post.data.title}
-class="w-full h-full object-cover"
-/>
-</div>
+            <span class="glass-boton px-3 py-1 rounded-full">
+              📖 Lectura 3 min
+            </span>
+          </div>
+        </div>
+      </div>
 
-<div>
+      <!-- CONTENIDO + SIDEBAR -->
 
-<h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-{post.data.title}
-</h1>
+      <div class="grid lg:grid-cols-[1fr_300px] gap-12">
+        <!-- CONTENIDO -->
 
-<p class="text-lg  mb-6">
-{post.data.description}
-</p>
+        <article
+          class="prose prose-invert max-w-none prose-headings:text-cyan-400 prose-a:text-cyan-400 whitespace-pre-line"
+        >
+          <Content />
+        </article>
 
-<div class="flex gap-4 text-sm ">
+        <!-- SIDEBAR -->
 
-<span class="glass-boton px-3 py-1 rounded-full">
-📅 {post.data.date.toLocaleDateString()}
-</span>
+        <aside class="hidden lg:block">
+          <div class="sticky top-28 glass-container p-6 rounded-xl">
+            <h3 class="text-lg font-semibold mb-4 text-orange-400">
+              Tabla de contenidos
+            </h3>
 
-<span class="glass-boton px-3 py-1 rounded-full">
-📖 Lectura 3 min
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CONTENIDO + SIDEBAR -->
-
-<div class="grid lg:grid-cols-[1fr_300px] gap-12">
-
-<!-- CONTENIDO -->
-
-<article class="prose prose-invert max-w-none prose-headings:text-cyan-400 prose-a:text-cyan-400 whitespace-pre-line">
-  <Content />
-</article>
-
-<!-- SIDEBAR -->
-
-<aside class="hidden lg:block">
-
-<div class="sticky top-28 glass-container p-6 rounded-xl">
-
-<h3 class="text-lg font-semibold mb-4 text-orange-400">
-Tabla de contenidos
-</h3>
-
-<div class="">
-Por ahora bienvenidos
-</div>
-
-</div>
-
-</aside>
-
-</div>
-
-</div>
-
-</section>
-
+            <div class="">Por ahora bienvenidos</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 </Layout>

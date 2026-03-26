@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css' 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BotonWhatsApp from '../components/BotonWhatsApp.astro';
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BotonWhatsApp from "../components/BotonWhatsApp.astro";
 
 interface Props {
 	title?: string;
@@ -27,31 +27,39 @@ const {
 	type = "website",
 	siteName = "Desarrollo Web Profesional México | Luis Salazar",
 	locale = "es_MX",
-	card = "summary_large_image"
+	card = "summary_large_image",
 } = Astro.props;
 ---
-
 
 <!doctype html>
 <html lang="es-MX">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/logo-LS-transparente.png" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/logo-LS-transparente.png"
+		/>
 		<link rel="icon" href="/logo-LS-transparente.png" />
-		<link rel="icon" type="image/png" href="/logo-LS-transparente.png"/>
+		<link rel="icon" type="image/png" href="/logo-LS-transparente.png" />
 		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-8Q25R0FC4M"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
 
-		  gtag('config', 'G-8Q25R0FC4M');
+		<!-- Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-8Q25R0FC4M"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-8Q25R0FC4M");
 		</script>
-		
+
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -60,10 +68,13 @@ const {
 		<meta name="robots" content="index, follow" />
 		<meta name="language" content="Spanish" />
 		<meta name="geo.region" content="MX-VER" />
-		<meta name="geo.placename" content="Ciudad de México, Xalapa, Veracruz" />
+		<meta
+			name="geo.placename"
+			content="Ciudad de México, Xalapa, Veracruz"
+		/>
 		<meta name="geo.position" content="19.4326;-99.1332" />
 		<meta name="ICBM" content="19.4326,-99.1332" />
-		
+
 		<!-- Open Graph Meta Tags -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
@@ -72,21 +83,27 @@ const {
 		<meta property="og:type" content={type} />
 		<meta property="og:site_name" content={siteName} />
 		<meta property="og:locale" content={locale} />
-		<meta property="og:image:alt" content="Desarrollo de páginas web profesionales en México" />
+		<meta
+			property="og:image:alt"
+			content="Desarrollo de páginas web profesionales en México"
+		/>
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		
+
 		<!-- Twitter Card Meta Tags -->
 		<meta name="twitter:card" content={card} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
 		<meta name="twitter:creator" content={author} />
-		<meta name="twitter:image:alt" content="Desarrollo web profesional en Ciudad de México" />
-		
+		<meta
+			name="twitter:image:alt"
+			content="Desarrollo web profesional en Ciudad de México"
+		/>
+
 		<!-- Canonical URL -->
 		<link rel="canonical" href={url} />
-		
+
 		<!-- Additional SEO Meta Tags -->
 		<meta name="theme-color" content="#2d85f0" />
 		<meta name="msapplication-TileColor" content="#2d85f0" />
@@ -95,90 +112,90 @@ const {
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		
+
 		<!-- Structured Data (JSON-LD) -->
 		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "ProfessionalService",
-			"name": "Luis Salazar - Desarrollo Web Profesional",
-			"description": "Desarrollo de páginas web profesionales en Ciudad de México. Landing pages, tiendas online y diseño web para negocios.",
-			"url": "https://studio.luissalazar.com.mx/",
-			"image": "/luisdev-logo.png",
-			"telephone": "+52 1 55 1234 5678",
-			"priceRange": "$5000 - $50000",
-			"address": {
-				"@type": "PostalAddress",
-				"addressLocality": "Ciudad de México",
-				"addressRegion": "CMX",
-				"addressCountry": "MX",
-				"postalCode": "06000"
-			},
-			"geo": {
-				"@type": "GeoCoordinates",
-				"latitude": 19.4326,
-				"longitude": -99.1332
-			},
-			"openingHours": "Mo-Fr 09:00-18:00",
-			"sameAs": [
-				"https://github.com/luisslzrx",
-				"https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
-			],
-			"serviceType": [
-				"Desarrollo de Páginas Web",
-				"Diseño Web Profesional",
-				"Creación de Landing Pages",
-				"Desarrollo de Tiendas Online",
-				"Mantenimiento Web",
-				"SEO Técnico"
-			],
-			"areaServed": [
-				{
-					"@type": "City",
-					"name": "Ciudad de México",
-					"@id": "https://en.wikipedia.org/wiki/Mexico_City"
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfessionalService",
+				"name": "Luis Salazar - Desarrollo Web Profesional",
+				"description": "Desarrollo de páginas web profesionales en Ciudad de México. Landing pages, tiendas online y diseño web para negocios.",
+				"url": "https://studio.luissalazar.com.mx/",
+				"image": "/luisdev-logo.png",
+				"telephone": "+52 1 55 1234 5678",
+				"priceRange": "$5000 - $50000",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Ciudad de México",
+					"addressRegion": "CMX",
+					"addressCountry": "MX",
+					"postalCode": "06000"
 				},
-				{
-					"@type": "City", 
-					"name": "Xalapa",
-					"@id": "https://en.wikipedia.org/wiki/Xalapa"
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": 19.4326,
+					"longitude": -99.1332
 				},
-				{
-					"@type": "State",
-					"name": "Veracruz",
-					"@id": "https://en.wikipedia.org/wiki/Veracruz"
-				}
-			],
-			"knowsAbout": [
-				"HTML",
-				"CSS", 
-				"JavaScript",
-				"Astro",
-				"Tailwind CSS",
-				"Python Django",
-				"PHP",
-				"WordPress",
-				"UX/UI",
-				"SEO técnico",
-				"Diseño de landing pages",
-				"Desarrollo de ecommerce",
-				"Desarrollo web responsive"
-			],
-			"offers": {
-				"@type": "Offer",
-				"itemOffered": "Servicio de desarrollo web",
-				"priceCurrency": "MXN",
-				"price": "5000",
-				"availability": "https://schema.org/InStock",
-				"seller": {
-					"@type": "Person",
-					"name": "Luis Salazar"
+				"openingHours": "Mo-Fr 09:00-18:00",
+				"sameAs": [
+					"https://github.com/luisslzrx",
+					"https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+				],
+				"serviceType": [
+					"Desarrollo de Páginas Web",
+					"Diseño Web Profesional",
+					"Creación de Landing Pages",
+					"Desarrollo de Tiendas Online",
+					"Mantenimiento Web",
+					"SEO Técnico"
+				],
+				"areaServed": [
+					{
+						"@type": "City",
+						"name": "Ciudad de México",
+						"@id": "https://en.wikipedia.org/wiki/Mexico_City"
+					},
+					{
+						"@type": "City",
+						"name": "Xalapa",
+						"@id": "https://en.wikipedia.org/wiki/Xalapa"
+					},
+					{
+						"@type": "State",
+						"name": "Veracruz",
+						"@id": "https://en.wikipedia.org/wiki/Veracruz"
+					}
+				],
+				"knowsAbout": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"Astro",
+					"Tailwind CSS",
+					"Python Django",
+					"PHP",
+					"WordPress",
+					"UX/UI",
+					"SEO técnico",
+					"Diseño de landing pages",
+					"Desarrollo de ecommerce",
+					"Desarrollo web responsive"
+				],
+				"offers": {
+					"@type": "Offer",
+					"itemOffered": "Servicio de desarrollo web",
+					"priceCurrency": "MXN",
+					"price": "5000",
+					"availability": "https://schema.org/InStock",
+					"seller": {
+						"@type": "Person",
+						"name": "Luis Salazar"
+					}
 				}
 			}
-		}
 		</script>
 	</head>
-	
+
 	<body>
 		<Header />
 		<slot />

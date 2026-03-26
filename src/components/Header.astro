@@ -8,104 +8,47 @@ import GithubIcon from "./icons/GitHub-icon.astro";
   id="mainHeader"
   class="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]"
 >
-
-<!-- MOBILE / TABLET HEADER -->
-<div class="md:hidden flex items-center justify-between px-6 py-4 glass-container">
-
-  <div class="text-xl font-bold">
-    <img src="/logo-horizontal-negro.png" alt="Logo" class="h-8">
-  </div>
-
-  <button id="menuButton" class="flex flex-col gap-1.5">
-    <span class="w-6 h-[2px] bg-white"></span>
-    <span class="w-6 h-[2px] bg-white"></span>
-    <span class="w-6 h-[2px] bg-white"></span>
-  </button>
-
-</div>
-
-
-<!-- MOBILE MENU -->
-<div
-  id="mobileMenu"
-  class="md:hidden hidden flex flex-col gap-6 px-6 pb-6 pt-2 backdrop-blur-xl glass-container"
->
-
-  <a href="/" class="menuLink hover:text-blue-600 transition-colors">
-        Inicio
-      </a>
-
-      <a href="/proyectos" class="menuLink hover:text-blue-600 transition-colors">
-        Proyectos
-      </a>
-
-      <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
-        Blog
-      </a>
-
-      <a href="/#contacto" class="menuLink hover:text-blue-600 transition-colors">
-        Contacto
-      </a>
-
-  <div class="flex items-center gap-6 pt-4 border-t border-slate-700">
-
-    <a
-      href="www.linkedin.com/in/luis-gerardo-salazar-aguilar"
-      target="_blank"
-      class=" hover:text-blue-400 transition-colors"
-    >
-      <LinkedinIcon class="w-5 h-5" />
-    </a>
-
-    <a
-      href="https://github.com/luisslzrx"
-      target="_blank"
-      class=" hover:text-gray-400 transition-colors"
-    >
-      <GithubIcon class="w-5 h-5" />
-    </a>
-
-
-  </div>
-
-</div>
-
-
-<!-- DESKTOP HEADER -->
-<nav class="hidden md:block max-w-6xl mx-auto px-6 py-4 transition-all duration-500">
-  
-  <div class="flex justify-between items-center">
-
-    <div id="logoBlock" class="text-xl font-bold transition-all duration-500">
-      <img src="/logo-horizontal-negro.png" alt="Logo" class="h-12">
+  <!-- MOBILE / TABLET HEADER -->
+  <div
+    class="md:hidden flex items-center justify-between px-6 py-4 glass-container"
+  >
+    <div class="text-xl font-bold">
+      <img src="/logo-horizontal-negro.png" alt="Logo" class="h-8" />
     </div>
 
-    <div id="menuBlock" class="flex items-center gap-6 transition-all duration-500">
-      
-      <a href="/" class="menuLink hover:text-blue-600 transition-colors">
-        Inicio
-      </a>
+    <button id="menuButton" class="flex flex-col gap-1.5">
+      <span class="w-6 h-[2px] bg-white"></span>
+      <span class="w-6 h-[2px] bg-white"></span>
+      <span class="w-6 h-[2px] bg-white"></span>
+    </button>
+  </div>
 
-      <a href="/proyectos" class="menuLink hover:text-blue-600 transition-colors">
-        Proyectos
-      </a>
+  <!-- MOBILE MENU -->
+  <div
+    id="mobileMenu"
+    class="md:hidden hidden flex flex-col gap-6 px-6 pb-6 pt-2 backdrop-blur-xl glass-container"
+  >
+    <a href="/" class="menuLink hover:text-blue-600 transition-colors">
+      Inicio
+    </a>
 
-      <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
-        Blog
-      </a>
+    <a href="/proyectos" class="menuLink hover:text-blue-600 transition-colors">
+      Proyectos
+    </a>
 
-      <a href="/#contacto" class="menuLink hover:text-blue-600 transition-colors">
-        Contacto
-      </a>
+    <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
+      Blog
+    </a>
 
-    </div>
+    <a href="/#contacto" class="menuLink hover:text-blue-600 transition-colors">
+      Contacto
+    </a>
 
-    <div id="iconsBlock" class="flex items-center gap-4 transition-all duration-500">
-      
+    <div class="flex items-center gap-6 pt-4 border-t border-slate-700">
       <a
-        href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+        href="www.linkedin.com/in/luis-gerardo-salazar-aguilar"
         target="_blank"
-        class=" hover:text-blue-400 transition-colors"
+        class="hover:text-blue-400 transition-colors"
       >
         <LinkedinIcon class="w-5 h-5" />
       </a>
@@ -113,120 +56,163 @@ import GithubIcon from "./icons/GitHub-icon.astro";
       <a
         href="https://github.com/luisslzrx"
         target="_blank"
-        class=" hover:text-gray-400 transition-colors"
+        class="hover:text-gray-400 transition-colors"
       >
         <GithubIcon class="w-5 h-5" />
       </a>
-
-      <ThemeToggle />
-
     </div>
-
   </div>
 
-</nav>
+  <!-- DESKTOP HEADER -->
+  <nav
+    class="hidden md:block max-w-6xl mx-auto px-6 py-4 transition-all duration-500"
+  >
+    <div class="flex justify-between items-center">
+      <div id="logoBlock" class="text-xl font-bold transition-all duration-500">
+        <img src="/logo-horizontal-negro.png" alt="Logo" class="h-12" />
+      </div>
 
+      <div
+        id="menuBlock"
+        class="flex items-center gap-6 transition-all duration-500"
+      >
+        <a href="/" class="menuLink hover:text-blue-600 transition-colors">
+          Inicio
+        </a>
+
+        <a
+          href="/proyectos"
+          class="menuLink hover:text-blue-600 transition-colors"
+        >
+          Proyectos
+        </a>
+
+        <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
+          Blog
+        </a>
+
+        <a
+          href="/#contacto"
+          class="menuLink hover:text-blue-600 transition-colors"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <div
+        id="iconsBlock"
+        class="flex items-center gap-4 transition-all duration-500"
+      >
+        <a
+          href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+          target="_blank"
+          class="hover:text-blue-400 transition-colors"
+        >
+          <LinkedinIcon class="w-5 h-5" />
+        </a>
+
+        <a
+          href="https://github.com/luisslzrx"
+          target="_blank"
+          class="hover:text-gray-400 transition-colors"
+        >
+          <GithubIcon class="w-5 h-5" />
+        </a>
+
+        <ThemeToggle />
+      </div>
+    </div>
+  </nav>
 </header>
 
 <style>
+  .menuLink {
+    white-space: nowrap;
+  }
 
-.menuLink{
-  white-space:nowrap;
-}
+  /* SCROLL EFFECT SOLO DESKTOP */
 
-/* SCROLL EFFECT SOLO DESKTOP */
+  @media (min-width: 768px) {
+    #mainHeader.scrolled {
+      width: auto;
 
-@media (min-width:768px){
+      top: 18px;
 
-#mainHeader.scrolled{
+      border-radius: 9999px;
 
-  width:auto;
+      padding-left: 18px;
+      padding-right: 28px;
 
-  top:18px;
+      background: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.03);
 
-  border-radius:9999px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(18px);
 
-  padding-left:18px;
-  padding-right:28px;
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
 
+    #mainHeader.scrolled #logoBlock {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
 
-  background: rgba(255, 255, 255, 0.08);
-  background-color: rgba(255, 255, 255, 0.03);
+    #mainHeader.scrolled #iconsBlock {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
 
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(18px);
+    #mainHeader.scrolled #menuBlock {
+      gap: 32px;
+      font-size: 0.9rem;
+    }
 
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
-}
-
-#mainHeader.scrolled #logoBlock{
-  opacity:0;
-  transform:scale(.8);
-  pointer-events:none;
-}
-
-#mainHeader.scrolled #iconsBlock{
-  opacity:0;
-  transform:scale(.8);
-  pointer-events:none;
-}
-
-#mainHeader.scrolled #menuBlock{
-  gap:32px;
-  font-size:0.9rem;
-}
-
-#mainHeader.scrolled nav{
-  padding-top:5px;
-  padding-bottom:5px;
-}
-
-}
-
+    #mainHeader.scrolled nav {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
 </style>
 
 <script>
-
-const header = document.getElementById("mainHeader");
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
-
-/* scroll animation solo desktop */
-
-window.addEventListener("scroll", () => {
-
-  if (window.innerWidth >= 768) {
-
-    if (window.scrollY > 60) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-
-  }
-
-});
-
-/* mobile menu toggle */
-menuButton?.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-});
-
-// Cerrar menú al hacer clic fuera
-document.addEventListener("click", (e: Event) => {
-  const mobileMenu = document.getElementById("mobileMenu");
+  const header = document.getElementById("mainHeader");
   const menuButton = document.getElementById("menuButton");
-  
-  if (window.innerWidth < 768 && 
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  /* scroll animation solo desktop */
+
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth >= 768) {
+      if (window.scrollY > 60) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+  });
+
+  /* mobile menu toggle */
+  menuButton?.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener("click", (e: Event) => {
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuButton = document.getElementById("menuButton");
+
+    if (
+      window.innerWidth < 768 &&
       mobileMenu &&
       !menuButton?.contains(e.target) &&
       !mobileMenu.contains(e.target) &&
-      !mobileMenu.classList.contains("hidden")) {
-    mobileMenu.classList.add("hidden");
-  }
-});
-
+      !mobileMenu.classList.contains("hidden")
+    ) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
 </script>
