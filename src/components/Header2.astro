@@ -1,0 +1,537 @@
+---
+import Github from "./icons/Github-Icon.astro";
+import Linkedin from "./icons/Linkedin-Icon.astro";
+import Whatsapp from "./icons/Whatsapp-Icon.astro";
+import AcercaDeMiIcon from "./icons/AcercaDeMi-Icon.astro";
+import BeneficiosIcon from "./icons/Beneficios-Icon.astro";
+import TestimoniosIcon from "./icons/Testimoniales-Icon.astro";
+import PortafolioIcon from "./icons/Portafolio-Icon.astro";
+import PreciosIcon from "./icons/Precios-Icon.astro";
+import ContactoIcon from "./icons/Contacto-Icon.astro";
+import ServiciosIcon from "./icons/Servicios-Icon.astro";
+import AboutContent from "./about2.astro";
+import ServicesContent from "./servicios2.astro";
+import PricesContent from "./Prices2.astro";
+import ProyectosContent from "./Proyectos2.astro";
+import BenefitsContent from "./Beneficios2.astro";
+import TestimonialsContent from "./Testimonios.astro";
+import ContactContent from "./Contacto2.astro";
+---
+
+<!-- NAVBAR: logo + social icons -->
+<header
+  class="fixed top-0 left-0 right-0 z-50 w-full flex items-center justify-between px-4 sm:px-8 py-5"
+>
+  <!-- Logo -->
+  <a href="/" class="flex items-center justify-center w-16 h-16 sm:w-24 sm:h-24">
+    <img
+      src="/geradev.png"
+      alt="Geradev Logo"
+      class="w-full h-full object-contain"
+    />
+  </a>
+
+  <!-- Social Icons (ocultos en móvil) -->
+  <nav class="hidden md:flex items-center gap-5">
+
+    <!-- Githib -->
+    <a
+      href="https://github.com/luisslzrx"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+    >
+      <Github class="w-5 h-5" />
+    </a>
+
+    <!-- Linkend -->
+    <a
+      href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+    >
+      <Linkedin class="w-5 h-5" />
+    </a>
+
+    <!-- Whatsapp -->
+    <a
+      href="https://wa.me/522288535112?text=Hola,%20quiero%20una%20cotización"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+    >
+      <Whatsapp class="w-5 h-5" />
+    </a>
+
+  </nav>
+
+  <!-- Menú Hamburguesa (visible solo en móvil) -->
+  <button
+    onclick="toggleMobileMenu()"
+    class="md:hidden flex flex-col gap-1.5 p-2 text-white"
+  >
+    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-1"></span>
+    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-2"></span>
+    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-3"></span>
+  </button>
+</header>
+
+<!-- Menú Móvil Desplegable -->
+<div
+  id="mobileMenu"
+  class="fixed inset-0 z-40 hidden bg-black/95 backdrop-blur-lg"
+>
+  <div class="flex flex-col items-center justify-center h-full gap-6 px-6">
+    <!-- Acerca de mi -->
+    <button
+      onclick="openAboutPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <AcercaDeMiIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">About</span>
+    </button>
+
+    <!-- Servicios -->
+    <button
+      onclick="openServicesPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <ServiciosIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Services</span>
+    </button>
+
+    <!-- Beneficios -->
+    <button
+      onclick="openBenefitsPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <BeneficiosIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Beneficios</span>
+    </button>
+
+    <!-- Portafolio -->
+    <button
+      onclick="openGalleryPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <PortafolioIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Portafolio</span>
+    </button>
+
+    <!-- Precios -->
+    <button
+      onclick="openPricingPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <PreciosIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Precios</span>
+    </button>
+
+    <!-- Testimonios -->
+    <button
+      onclick="openTestimonialsPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <TestimoniosIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Testimonios</span>
+    </button>
+
+    <!-- Contacto -->
+    <button
+      onclick="openContactPopup(); toggleMobileMenu();"
+      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+    >
+      <ContactoIcon class="w-6 h-6 text-white" />
+      <span class="text-white font-semibold">Contacto</span>
+    </button>
+
+    <!-- Social Icons en móvil -->
+    <div class="flex items-center gap-6 mt-4">
+      <a
+        href="https://github.com/luisslzrx"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white transition-transform duration-200 hover:scale-125"
+      >
+        <Github class="w-6 h-6" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white transition-transform duration-200 hover:scale-125"
+      >
+        <Linkedin class="w-6 h-6" />
+      </a>
+      <a
+        href="https://wa.me/522288535112?text=Hola,%20quiero%20una%20cotización"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white transition-transform duration-200 hover:scale-125"
+      >
+        <Whatsapp class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .popup-overlay {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+  }
+  .popup-overlay.show { opacity: 1; }
+
+  .popup-content {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .popup-content.show {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  .popup-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  .popup-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  .popup-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Animación del menú hamburguesa */
+  .menu-open #menu-line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-open #menu-line-2 {
+    opacity: 0;
+  }
+  .menu-open #menu-line-3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+</style>
+
+<!-- Popup About -->
+<div id="aboutPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeAboutPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <AboutContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Services -->
+<div id="servicesPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeServicesPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <ServicesContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Precios -->
+<div id="pricingPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closePricingPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <PricesContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Portafolio -->
+<div id="galleryPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeGalleryPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <ProyectosContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Beneficios -->
+<div id="benefitsPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeBenefitsPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <BenefitsContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Testimonios -->
+<div id="testimonialsPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeTestimonialsPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <TestimonialsContent client:load />
+    </div>
+  </div>
+</div>
+
+<!-- Popup Contacto -->
+<div id="contactPopup" class="fixed inset-0 z-[60] hidden">
+  <div
+    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
+    onclick="closeContactPopup()"
+  ></div>
+  <div class="relative flex items-center justify-center min-h-screen p-4">
+    <div class="popup-content">
+      <ContactContent client:load />
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const body = document.body;
+    if (menu) {
+      menu.classList.toggle('hidden');
+      body.classList.toggle('menu-open');
+      body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+    }
+  }
+
+  function openAboutPopup() {
+    const popup = document.getElementById('aboutPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeAboutPopup() {
+    const popup = document.getElementById('aboutPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openServicesPopup() {
+    const popup = document.getElementById('servicesPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeServicesPopup() {
+    const popup = document.getElementById('servicesPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openPricingPopup() {
+    const popup = document.getElementById('pricingPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closePricingPopup() {
+    const popup = document.getElementById('pricingPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openGalleryPopup() {
+    const popup = document.getElementById('galleryPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeGalleryPopup() {
+    const popup = document.getElementById('galleryPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openBenefitsPopup() {
+    const popup = document.getElementById('benefitsPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeBenefitsPopup() {
+    const popup = document.getElementById('benefitsPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openTestimonialsPopup() {
+    const popup = document.getElementById('testimonialsPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeTestimonialsPopup() {
+    const popup = document.getElementById('testimonialsPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  function openContactPopup() {
+    const popup = document.getElementById('contactPopup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const overlay = popup.querySelector('.popup-overlay');
+        const content = popup.querySelector('.popup-content');
+        if (overlay) overlay.classList.add('show');
+        if (content) content.classList.add('show');
+      }, 10);
+    }
+  }
+
+  function closeContactPopup() {
+    const popup = document.getElementById('contactPopup');
+    if (popup) {
+      const overlay = popup.querySelector('.popup-overlay');
+      const content = popup.querySelector('.popup-content');
+      if (overlay) overlay.classList.remove('show');
+      if (content) content.classList.remove('show');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAboutPopup();
+      closeServicesPopup();
+      closePricingPopup();
+      closeGalleryPopup();
+      closeBenefitsPopup();
+      closeTestimonialsPopup();
+      closeContactPopup();
+      const menu = document.getElementById('mobileMenu');
+      if (menu && !menu.classList.contains('hidden')) {
+        toggleMobileMenu();
+      }
+    }
+  });
+</script>

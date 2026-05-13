@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BotonWhatsApp from "../components/BotonWhatsApp.astro";
+import Header2 from "../components/Header2.astro";
+import Footer2 from "../components/Footer2.astro";
 
 interface Props {
 	title?: string;
@@ -197,9 +199,8 @@ const {
 	</head>
 
 	<body>
-		<Header />
+		<Header2 />
 		<slot />
-		<Footer />
-		<BotonWhatsApp />
+		<Footer2 />
 	</body>
 </html>

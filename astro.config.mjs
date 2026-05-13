@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://studio.luissalazar.com.mx', // 🔴 CORREGIDO
+  site: 'https://studio.luissalazar.com.mx', 
   output: 'static',
   integrations: [sitemap()],
   vite: {

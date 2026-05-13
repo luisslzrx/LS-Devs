@@ -1,0 +1,82 @@
+---
+// AboutContent.astro
+// Contenido interior del popup "About"
+// Reemplaza /about-photo.jpg con tu imagen real
+---
+
+<div class="flex items-center justify-center relative bg-white rounded-2xl w-full max-w-5xl mx-auto">
+
+  <!-- Badge "About" — esquina superior izquierda, sobresale -->
+  <div class="absolute -top-4 left-6 z-20">
+    <span class="bg-[#15222a] text-white text-sm sm:text-xl font-bold px-4 sm:px-6 py-2 rounded-xl shadow-lg">
+      Acerca de mi
+    </span>
+  </div>
+
+  <!-- Botón cerrar — esquina superior derecha -->
+  <button
+    onclick="closeAboutPopup()"
+    class="absolute top-4 right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-900 text-white
+           flex items-center justify-center hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
+    aria-label="Cerrar"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+    </svg>
+  </button>
+
+  <!-- Layout: imagen izquierda + texto derecha -->
+  <div class="flex flex-col md:flex-row items-stretch pt-8 px-4 sm:px-8 pb-6 sm:pb-10 gap-6 sm:gap-8">
+
+    <!-- Imagen -->
+    <div class="w-full md:w-[45%] flex-shrink-0">
+      <img
+        src="/acerca.webp"
+        alt="About photo"
+        class="w-full h-full object-cover object-center rounded-2xl"
+        style="min-height: 250px; max-height: 400px;"
+      />
+    </div>
+
+    <!-- Texto -->
+    <div class="flex flex-col justify-center gap-4 sm:gap-5 flex-1">
+
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+        Desarrollo web enfocado en diseño, rendimiento y resultados
+      </h2>
+
+      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
+        Soy desarrollador web freelance especializado en crear sitios modernos, rápidos y visualmente atractivos para marcas, negocios y emprendedores que buscan una presencia digital profesional.
+      </p>
+
+      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
+        Mi enfoque combina diseño UI/UX, desarrollo frontend y optimización web para construir experiencias que no solo se vean bien, sino que también transmitan confianza, mejoren la experiencia del usuario y ayuden a convertir visitas en clientes.
+      </p>
+
+      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
+        Trabajo en cada proyecto cuidando detalles como rendimiento, estructura responsive, identidad visual y optimización SEO, utilizando tecnologías modernas para lograr sitios escalables y funcionales.
+      </p>
+
+      <!-- Lista con checks -->
+      <ul class="flex flex-col gap-2 sm:gap-3 mt-1">
+        {[
+          "Diseño web moderno y profesional",
+          "Desarrollo responsive para todos los dispositivos",
+          "Optimización de velocidad y rendimiento",
+          "Landing pages y sitios enfocados en conversión",
+          "Interfaces limpias con experiencia UI/UX",
+          "Desarrollo con tecnologías web actuales",
+        ].map((item) => (
+          <li class="flex items-center gap-2 sm:gap-3 text-gray-800 text-xs sm:text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </div>
+
+</div>

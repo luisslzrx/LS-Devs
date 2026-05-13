@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Página no encontrada | LS Studio"
+  description="La página que buscas no existe. Regresa al inicio para ver nuestros servicios de desarrollo web."
+  url="https://studio.luissalazar.com.mx/404"
+>
+
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-2xl mx-auto text-center">
+    
+    <!-- 404 -->
+    <div class="mb-8">
+      <h1 class="text-8xl md:text-9xl font-bold text-cyan-400 mb-4">
+        404
+      </h1>
+      <div class="w-32 h-1 bg-linear-to-r from-cyan-400 to-blue-400 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Mensaje -->
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-white">
+      Página no encontrada
+    </h2>
+    
+    <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto">
+      La página que buscas no existe o ha sido movida. 
+      Pero no te preocupes, tengo algo mejor para ti.
+    </p>
+
+    <!-- Botones -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href="/" 
+        class="inline-flex items-center justify-center px-6 py-3 bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+      >
+        Ir al inicio
+      </a>
+      
+      <a 
+        href="/proyectos" 
+        class="inline-flex items-center justify-center px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-white transition-all duration-300"
+      >
+        Ver proyectos
+      </a>
+    </div>
+
+    <!-- Extra -->
+    <div class="mt-12 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+      <p class="text-sm text-gray-400 mb-2">
+        ¿Buscas algo específico?
+      </p>
+      <p class="text-xs text-gray-500">
+        Desarrollo web • Landing pages • Tiendas online • SEO técnico
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</Layout>

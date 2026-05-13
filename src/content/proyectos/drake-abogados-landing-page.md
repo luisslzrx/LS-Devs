@@ -1,6 +1,6 @@
 ---
 title: Drake Abogados Landing Page
-description: Landing page enfocada en la captación de clientes para servicios legales, desarrollada en WordPress con Elementor e integración con Calendly para agendar citas de forma automatizada.
+description: Landing page enfocada en la captación de clientes para servicios legales, desarrollada en WordPress con Elementor e integración con Calendly.
 date: 2026-03-16
 image: /proyectos/drake-abogados-landing.webp
 link: "https://drakeabogados.com/drake-abogados/"

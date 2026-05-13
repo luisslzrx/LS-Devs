@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import PostCard from "../components/PostCard.astro";
+import Header2 from "../components/Header2.astro";
 
 const posts = await getCollection("blog");
 
@@ -14,30 +15,27 @@ posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   url="https://studio.luissalazar.com.mx/blog"
 >
 
-<main class="w-full max-w-[900px] mx-auto px-6 md:px-8 pb-24">
+<!-- Header -->
+<Header2 />
 
-<section class="">
+<main class="w-full min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32 pb-24">
+
+<section class="w-full max-w-[1200px] mx-auto px-6 md:px-8">
 
   <!-- Banner -->
-
-
-  <div class="relative w-full min-h-[420px] flex items-center overflow-hidden">
-        <div class="max-w-xl px-4 sm:px-6 lg:px-8">
-        
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">
-            Mi blog
-        </h1>
-
-        <p class="mt-6 text-base sm:text-lg leading-relaxed">
-            Artículos sobre desarrollo web, Astro, JavaScript, SEO técnico y experiencias construyendo proyectos web
-        </p>
-
-        </div>
+  <div class="relative w-full min-h-[300px] flex items-center mb-16">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
+        Mi blog
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/85 leading-relaxed font-light">
+        Artículos sobre desarrollo web, Astro, JavaScript, SEO técnico y experiencias construyendo proyectos web
+      </p>
+    </div>
   </div>
 
-
   <!-- GRID DE POSTS -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
     {posts.map(post => (
       <PostCard
