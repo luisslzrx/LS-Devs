@@ -82,14 +82,14 @@ import ContactContent from "./Contacto2.astro";
   id="mobileMenu"
   class="fixed inset-0 z-40 hidden bg-black/95 backdrop-blur-lg"
 >
-  <div class="flex flex-col items-center justify-center h-full gap-6 px-6">
-    <!-- Acerca de mi -->
+  <div class="flex flex-col items-center justify-end h-full gap-3 px-6 pb-20 pt-32">
+    <!-- Sobre mí -->
     <button
       onclick="openAboutPopup(); toggleMobileMenu();"
       class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
     >
       <AcercaDeMiIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">About</span>
+      <span class="text-white font-semibold">Sobre mí</span>
     </button>
 
     <!-- Servicios -->
@@ -98,7 +98,7 @@ import ContactContent from "./Contacto2.astro";
       class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
     >
       <ServiciosIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Services</span>
+      <span class="text-white font-semibold">Servicios</span>
     </button>
 
     <!-- Beneficios -->
@@ -189,6 +189,11 @@ import ContactContent from "./Contacto2.astro";
     transition: all 0.3s ease-out;
     max-height: 90vh;
     overflow-y: auto;
+  }
+  @media (max-width: 768px) {
+    .popup-content {
+      max-height: 75vh;
+    }
   }
   .popup-content.show {
     transform: scale(1) translateY(0);
