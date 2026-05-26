@@ -4,14 +4,7 @@
 // Reemplaza /about-photo.jpg con tu imagen real
 ---
 
-<div class="flex items-center justify-center relative bg-white rounded-2xl w-full max-w-5xl mx-auto">
-
-  <!-- Badge "About" — esquina superior izquierda, sobresale -->
-  <div class="absolute -top-4 left-6 z-20">
-    <span class="bg-[#15222a] text-white text-sm sm:text-xl font-bold px-4 sm:px-6 py-2 rounded-xl shadow-lg">
-      Acerca de mi
-    </span>
-  </div>
+<div class="flex items-center justify-center relative bg-white rounded-2xl w-full max-w-5xl mx-auto overflow-visible">
 
   <!-- Botón cerrar — esquina superior derecha -->
   <button
@@ -68,7 +61,7 @@
           "Desarrollo con tecnologías web actuales",
         ].map((item) => (
           <li class="flex items-center gap-2 sm:gap-3 text-gray-800 text-xs sm:text-sm font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 text-[#111828] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
             </svg>
             {item}

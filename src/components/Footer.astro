@@ -1,11 +1,11 @@
 ---
-import AboutContent from "./about2.astro";
-import ServicesContent from "./servicios2.astro";
-import PricesContent from "./Prices2.astro";
-import ProyectosContent from "./Proyectos2.astro";
-import BenefitsContent from "./Beneficios2.astro";
+import AcercaDeMi from "./AcercaDeMi.astro";
+import Servicios from "./Servicios.astro";
+import Precios from "./Precios.astro";
+import Portafolio from "./Portafolio.astro";
+import Beneficios from "./Beneficios.astro";
 import TestimonialsContent from "./Testimonios.astro";
-import ContactContent from "./Contacto2.astro";
+import Contacto from "./Contacto.astro";
 
 //Iconos
 import AcercaDeMiIcon from "./icons/AcercaDeMi-Icon.astro";
@@ -38,7 +38,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
         <AcercaDeMiIcon class="w-6 h-6" />
       </span>
       <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">About</span>
+                   transition-colors duration-200 group-hover:text-white/95">Sobre mí</span>
     </button>
 
     <!-- Servicios -->
@@ -56,7 +56,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
         <ServiciosIcon class="w-6 h-6" />
       </span>
       <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Services</span>
+                   transition-colors duration-200 group-hover:text-white/95">Servicios</span>
     </button>
 
 
@@ -167,14 +167,14 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   /* Solo estados JS-toggled de popups */
   .popup-overlay {
     opacity: 0;
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.15s ease-out;
   }
   .popup-overlay.show { opacity: 1; }
 
   .popup-content {
     transform: scale(0.9) translateY(20px);
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
   }
   .popup-content.show {
     transform: scale(1) translateY(0);
@@ -191,9 +191,9 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   ></div>
   
   <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
+  <div class="relative flex items-center justify-center min-h-screen p-4 overflow-visible">
     <div class="popup-content">
-      <AboutContent />
+      <AcercaDeMi />
     </div>
   </div>
 </div>
@@ -209,7 +209,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   <!-- Contenedor del contenido -->
   <div class="relative flex items-center justify-center min-h-screen p-4">
     <div class="popup-content">
-      <ServicesContent />
+      <Servicios />
     </div>
   </div>
 </div>
@@ -225,7 +225,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   <!-- Contenedor del contenido -->
   <div class="relative flex items-center justify-center min-h-screen p-4">
     <div class="popup-content">
-      <PricesContent />
+      <Precios />
     </div>
   </div>
 </div>
@@ -241,7 +241,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   <!-- Contenedor del contenido -->
   <div class="relative flex items-center justify-center min-h-screen p-4">
     <div class="popup-content">
-      <ProyectosContent />
+      <Portafolio />
     </div>
   </div>
 </div>
@@ -257,7 +257,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   <!-- Contenedor del contenido -->
   <div class="relative flex items-center justify-center min-h-screen p-4">
     <div class="popup-content">
-      <BenefitsContent />
+      <Beneficios />
     </div>
   </div>
 </div>
@@ -289,7 +289,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
   <!-- Contenedor del contenido -->
   <div class="relative flex items-center justify-center min-h-screen p-4">
     <div class="popup-content">
-      <ContactContent />
+      <Contacto />
     </div>
   </div>
 </div>
@@ -301,12 +301,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -320,7 +320,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -329,12 +329,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -348,7 +348,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -357,12 +357,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -376,7 +376,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -385,12 +385,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -404,7 +404,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -413,12 +413,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -432,7 +432,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -441,12 +441,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -460,7 +460,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 
@@ -469,12 +469,12 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
     if (popup) {
       popup.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const overlay = popup.querySelector('.popup-overlay');
         const content = popup.querySelector('.popup-content');
         if (overlay) overlay.classList.add('show');
         if (content) content.classList.add('show');
-      }, 10);
+      });
     }
   }
 
@@ -488,7 +488,7 @@ import ServiciosIcon from "./icons/Servicios-Icon.astro";
       setTimeout(() => {
         popup.classList.add('hidden');
         document.body.style.overflow = 'auto';
-      }, 300);
+      }, 200);
     }
   }
 

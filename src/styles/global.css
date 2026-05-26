@@ -18,17 +18,7 @@ body {
 
   background-color: #000000e9;
 
-  background-image:
-    radial-gradient(
-      circle at 80% 10%,
-      color-mix(in srgb, #58a5dd 100%, transparent) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 20% 95%,
-      color-mix(in srgb, #145d8e 100%, transparent) 0%,
-      transparent 40%
-    );
+
 
   background-repeat: no-repeat;
   background-size: cover;

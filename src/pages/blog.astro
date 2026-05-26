@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import PostCard from "../components/PostCard.astro";
-import Header2 from "../components/Header2.astro";
 
 const posts = await getCollection("blog");
 
@@ -10,13 +9,10 @@ posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout
-  title="Blog de Desarrollo Web | LS Studio"
+  title="Blog de Desarrollo Web | geradev"
   description="Artículos sobre desarrollo de páginas web, landing pages y tiendas online en México. Estrategias para negocios que buscan atraer clientes y crecer en internet."
-  url="https://studio.luissalazar.com.mx/blog"
+  url="https://geradev.com.mx/blog"
 >
-
-<!-- Header -->
-<Header2 />
 
 <main class="w-full min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32 pb-24">
 

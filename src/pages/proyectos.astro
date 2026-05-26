@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ProyectosCard from "../components/ProyectosCard.astro";
-import Header2 from "../components/Header2.astro";
+import Header from "../components/Header.astro";
+import FooterInterna from "../components/Extras/FooterInterna.astro";
 
 const proyectos = await getCollection("proyectos");
 
@@ -12,11 +13,8 @@ proyectos.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 <Layout
 title="LS Studio | Sitios web profesionales para tu negocio"
 description="Proyectos de desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías."
-url="https://studio.luissalazar.com.mx/proyectos"
+url="https://geradev.com.mx/proyectos"
 >
-
-<!-- Header -->
-<Header2 />
 
 <main class="w-full min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32 pb-24">
 
@@ -53,5 +51,7 @@ url="https://studio.luissalazar.com.mx/proyectos"
 </section>
 
 </main>
+
+<FooterInterna />
 
 </Layout>

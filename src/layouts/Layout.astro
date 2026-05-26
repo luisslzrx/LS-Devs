@@ -2,9 +2,6 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import BotonWhatsApp from "../components/BotonWhatsApp.astro";
-import Header2 from "../components/Header2.astro";
-import Footer2 from "../components/Footer2.astro";
 
 interface Props {
 	title?: string;
@@ -20,14 +17,14 @@ interface Props {
 }
 
 const {
-	title = "LS Studio | Desarrollo Web Freelance México",
+	title = "geradev | Desarrollo Web Freelance México",
 	description = "Desarrollo de páginas web en Ciudad de México. Landing pages, tiendas online y diseño web para negocios. Sitios rápidos y optimizados para atraer clientes.",
 	keywords = "desarrollo de páginas web en CDMX, diseñador web freelance México, diseño web para negocios, desarrollo web profesional México, creación de páginas web",
 	image = "/logo-LS-transparente.png",
-	url = "https://studio.luissalazar.com.mx/",
+	url = "https://geradev.com.mx/",
 	author = "Luis Salazar",
 	type = "website",
-	siteName = "Desarrollo Web Profesional México | Luis Salazar",
+	siteName = "geradev | Desarrollo Web Profesional México",
 	locale = "es_MX",
 	card = "summary_large_image",
 } = Astro.props;
@@ -109,8 +106,8 @@ const {
 		<!-- Additional SEO Meta Tags -->
 		<meta name="theme-color" content="#2d85f0" />
 		<meta name="msapplication-TileColor" content="#2d85f0" />
-		<meta name="application-name" content="Luis Salazar - Desarrollo Web" />
-		<meta name="apple-mobile-web-app-title" content="Luis Salazar Dev" />
+		<meta name="application-name" content="geradev - Desarrollo Web" />
+		<meta name="apple-mobile-web-app-title" content="geradev" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -120,9 +117,9 @@ const {
 			{
 				"@context": "https://schema.org",
 				"@type": "ProfessionalService",
-				"name": "Luis Salazar - Desarrollo Web Profesional",
+				"name": "geradev - Desarrollo Web Profesional",
 				"description": "Desarrollo de páginas web profesionales en Ciudad de México. Landing pages, tiendas online y diseño web para negocios.",
-				"url": "https://studio.luissalazar.com.mx/",
+				"url": "https://geradev.com.mx/",
 				"image": "/luisdev-logo.png",
 				"telephone": "+52 1 55 1234 5678",
 				"priceRange": "$5000 - $50000",
@@ -199,8 +196,8 @@ const {
 	</head>
 
 	<body>
-		<Header2 />
+		<Header />
 		<slot />
-		<Footer2 />
+		<Footer />
 	</body>
 </html>

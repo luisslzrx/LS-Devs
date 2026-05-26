@@ -5,13 +5,6 @@
 
 <div class="relative bg-white rounded-3xl w-full max-w-5xl mx-auto">
 
-  <!-- Badge "Precios" -->
-  <div class="absolute -top-4 left-6 z-20">
-    <span class="bg-sky-400 text-white text-sm sm:text-xl font-bold px-4 sm:px-6 py-2 rounded-xl shadow-lg inline-block">
-      Precios
-    </span>
-  </div>
-
   <!-- Botón cerrar -->
   <button
     onclick="closePricingPopup()"
@@ -40,10 +33,10 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
 
       <!-- Landing Page -->
-      <div class="bg-gray-50 rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 border border-transparent hover:border-sky-200 transition-colors duration-200">
+      <div class="bg-gray-50 rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 border border-transparent hover:border-gray-300 transition-colors duration-200">
         <!-- Icono -->
         <div class="flex justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-14 sm:h-14 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-14 sm:h-14 text-[#111828]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12a8.959 8.959 0 0 1 .284-2.253"/>
           </svg>
         </div>
@@ -60,7 +53,7 @@
         <div class="text-center">
           <p class="text-[10px] sm:text-xs text-gray-400 font-medium mb-0.5">desde</p>
           <p class="text-2xl sm:text-4xl font-black text-gray-900 leading-none">$3,000<span class="text-xs sm:text-base font-semibold text-gray-400 ml-1">MXN</span></p>
-          <p class="text-[10px] sm:text-xs text-sky-400 font-medium mt-1 sm:mt-1.5">Entrega en 3–5 días hábiles</p>
+          <p class="text-[10px] sm:text-xs text-[#111828] font-medium mt-1 sm:mt-1.5">Entrega en 3–5 días hábiles</p>
         </div>
 
         <!-- Features -->
@@ -73,7 +66,7 @@
             "1 ronda de revisiones",
           ].map((f) => (
             <li class="flex items-start gap-2 text-gray-500 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#111828] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
               </svg>
               {f}
@@ -85,14 +78,14 @@
         <a
           href="https://studio.luissalazar.com.mx/#contacto"
           target="_blank"
-          class="mt-2 block text-center bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200"
+          class="mt-2 block text-center bg-[#111828] hover:bg-[#1f2937] text-white font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200"
         >
           Cotizar ahora →
         </a>
       </div>
 
       <!-- Sitio Web Informativo — POPULAR -->
-      <div class="relative bg-sky-400 rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 shadow-xl shadow-sky-200">
+      <div class="relative bg-[#111828] rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 shadow-xl shadow-gray-300">
         <!-- Badge popular -->
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
           <span class="bg-gray-900 text-white text-[8px] sm:text-[10px] font-bold px-3 sm:px-4 py-1 sm:py-1.5 rounded-full tracking-widest uppercase whitespace-nowrap shadow">
@@ -145,17 +138,17 @@
         <a
           href="https://studio.luissalazar.com.mx/#contacto"
           target="_blank"
-          class="mt-2 block text-center bg-white hover:bg-gray-50 text-sky-500 font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200 shadow"
+          class="mt-2 block text-center bg-white hover:bg-gray-50 text-[#111828] font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200 shadow"
         >
           Cotizar ahora →
         </a>
       </div>
 
       <!-- Tienda en Línea -->
-      <div class="bg-gray-50 rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 border border-transparent hover:border-sky-200 transition-colors duration-200">
+      <div class="bg-gray-50 rounded-2xl p-4 sm:p-7 flex flex-col gap-3 sm:gap-4 border border-transparent hover:border-gray-300 transition-colors duration-200">
         <!-- Icono -->
         <div class="flex justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-14 sm:h-14 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-14 sm:h-14 text-[#111828]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
           </svg>
         </div>
@@ -172,7 +165,7 @@
         <div class="text-center">
           <p class="text-[10px] sm:text-xs text-gray-400 font-medium mb-0.5">desde</p>
           <p class="text-2xl sm:text-4xl font-black text-gray-900 leading-none">$7,500<span class="text-xs sm:text-base font-semibold text-gray-400 ml-1">MXN</span></p>
-          <p class="text-[10px] sm:text-xs text-sky-400 font-medium mt-1 sm:mt-1.5">Entrega en 10–14 días hábiles</p>
+          <p class="text-[10px] sm:text-xs text-[#111828] font-medium mt-1 sm:mt-1.5">Entrega en 10–14 días hábiles</p>
         </div>
 
         <!-- Features -->
@@ -185,7 +178,7 @@
             "Soporte 60 días post-entrega",
           ].map((f) => (
             <li class="flex items-start gap-2 text-gray-500 text-xs">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#111828] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
               </svg>
               {f}
@@ -197,7 +190,7 @@
         <a
           href="https://studio.luissalazar.com.mx/#contacto"
           target="_blank"
-          class="mt-2 block text-center bg-sky-400 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200"
+          class="mt-2 block text-center bg-[#111828] hover:bg-[#1f2937] text-white font-bold text-xs sm:text-sm py-2 sm:py-3 rounded-xl transition-colors duration-200"
         >
           Cotizar ahora →
         </a>
