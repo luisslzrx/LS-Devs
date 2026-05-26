@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import LayoutInterna from "../layouts/LayoutInterna.astro";
 import { getCollection } from "astro:content";
 import PostCard from "../components/PostCard.astro";
 
@@ -8,7 +8,7 @@ const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout
+<LayoutInterna
   title="Blog de Desarrollo Web | geradev"
   description="Artículos sobre desarrollo de páginas web, landing pages y tiendas online en México. Estrategias para negocios que buscan atraer clientes y crecer en internet."
   url="https://geradev.com.mx/blog"

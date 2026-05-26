@@ -1,17 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import LayoutInterna from "../layouts/LayoutInterna.astro";
 import { getCollection } from "astro:content";
 import ProyectosCard from "../components/ProyectosCard.astro";
-import Header from "../components/Header.astro";
-import FooterInterna from "../components/Extras/FooterInterna.astro";
 
 const proyectos = await getCollection("proyectos");
 
 proyectos.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout
-title="LS Studio | Sitios web profesionales para tu negocio"
+<LayoutInterna
+title="geradev | Sitios web profesionales para tu negocio"
 description="Proyectos de desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías."
 url="https://geradev.com.mx/proyectos"
 >
@@ -52,6 +50,4 @@ url="https://geradev.com.mx/proyectos"
 
 </main>
 
-<FooterInterna />
-
-</Layout>
+</LayoutInterna>

@@ -18,141 +18,125 @@ import ServiciosIcon from "../icons/Servicios-Icon.astro";
 ---
 
 <!-- BOTTOM NAV -->
-<footer class="fixed bottom-0 left-0 right-0 z-50 w-full">
+<footer
+  id="mainFooter"
+  class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full z-50 transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)] opacity-0 pointer-events-none"
+>
   <!-- Botones de navegación (ocultos en móvil) -->
-  <nav class="hidden md:flex items-end justify-around px-4 py-5 bg-gradient-to-t from-black via-black/80 to-transparent">
-    <div class="w-full max-w-[1100px] mx-auto flex items-end justify-around">
+  <nav class="hidden md:block max-w-6xl mx-auto px-8 py-8 transition-all duration-500">
+    <div class="flex justify-center items-center gap-8">
 
-    <!-- Acerca de mi -->
-    <button
-      onclick="openAboutPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <AcercaDeMiIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Sobre mí</span>
-    </button>
+      <!-- Acerca de mi -->
+      <button
+        onclick="openAboutPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <AcercaDeMiIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Sobre mí</span>
+      </button>
 
-    <!-- Servicios -->
-    <button
-      onclick="openServicesPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <ServiciosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Servicios</span>
-    </button>
-
+      <!-- Servicios -->
+      <button
+        onclick="openServicesPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <ServiciosIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Servicios</span>
+      </button>
 
       <!-- Beneficios -->
-    <button
-      onclick="openBenefitsPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <BeneficiosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Beneficios</span>
-    </button>
+      <button
+        onclick="openBenefitsPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <BeneficiosIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Beneficios</span>
+      </button>
 
+      <!-- Portafolio -->
+      <button
+        onclick="openGalleryPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <PortafolioIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Portafolio</span>
+      </button>
 
-    <!-- Portafolio -->
-    <button
-      onclick="openGalleryPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <PortafolioIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Portafolio</span>
-    </button>
+      <!-- Precios -->
+      <button
+        onclick="openPricingPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <PreciosIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Precios</span>
+      </button>
 
+      <!-- Testimoniales -->
+      <button
+        onclick="openTestimonialsPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <TestimoniosIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Testimonios</span>
+      </button>
 
-    <!-- Precios -->
-    <button
-      onclick="openPricingPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <PreciosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Precios</span>
-    </button>
-
-
-    <!-- Testimoniales -->
-    <button
-      onclick="openTestimonialsPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <TestimoniosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Testimonios</span>
-    </button>
-
-
-    <!-- Contacto -->
-    <button
-      onclick="openContactPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <ContactoIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Contacto</span>
-    </button>
+      <!-- Contacto -->
+      <button
+        onclick="openContactPopup()"
+        class="group flex flex-col items-center gap-1.5 bg-transparent border-none cursor-pointer"
+      >
+        <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
+                     text-white/70 bg-transparent
+                     transition-all duration-200
+                     group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
+                     group-active:scale-95">
+          <ContactoIcon class="w-6 h-6" />
+        </span>
+        <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
+                     transition-colors duration-200 group-hover:text-white/95">Contacto</span>
+      </button>
 
     </div>
   </nav>
@@ -164,7 +148,39 @@ import ServiciosIcon from "../icons/Servicios-Icon.astro";
 </footer>
 
 <style>
-  /* Solo estados JS-toggled de popups */
+  /* Scroll effect solo desktop */
+  @media (min-width:768px){
+    #mainFooter.scrolled{
+      width:auto;
+      bottom:18px;
+      border-radius:9999px;
+      padding-left:32px;
+      padding-right:32px;
+      opacity: 1;
+      pointer-events: auto;
+
+      background: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.03);
+
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    #mainFooter.scrolled nav{
+      padding-top:12px;
+      padding-bottom:12px;
+    }
+
+    #mainFooter.scrolled nav div{
+      gap:24px;
+    }
+  }
+
+  /* Popup styles */
   .popup-overlay {
     opacity: 0;
     transition: opacity 0.15s ease-out;
@@ -181,6 +197,26 @@ import ServiciosIcon from "../icons/Servicios-Icon.astro";
     opacity: 1;
   }
 </style>
+
+<script is:inline>
+  const footer = document.getElementById("mainFooter");
+
+  /* scroll animation solo desktop */
+
+  window.addEventListener("scroll", () => {
+
+    if (window.innerWidth >= 768) {
+
+      if (window.scrollY > 60) {
+        footer.classList.add("scrolled");
+      } else {
+        footer.classList.remove("scrolled");
+      }
+
+    }
+
+  });
+</script>
 
 <!-- Popup About -->
 <div id="aboutPopup" class="fixed inset-0 z-[60] hidden">
