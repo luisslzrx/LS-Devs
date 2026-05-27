@@ -1,5 +1,7 @@
 ---
 // HeroSection.astro
+import WhatsappIcon from "./icons/WhatsappIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
 ---
 
 <section
@@ -36,32 +38,30 @@
       en resultados.
   </h2>
 
-    <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
-      <a
-        href="https://wa.me/522288535112?text=Hola,%20quiero%20una%20cotización"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-8 py-3 sm:px-10 sm:py-4 bg-white text-gray-900 font-bold text-xs sm:text-sm tracking-widest rounded-full
-               shadow-2xl hover:bg-pink-50 hover:scale-105 active:scale-95
-               transition-all duration-300 ease-out cursor-pointer inline-block animate-scale-in delay-300"
-      >
-        Cotizar gratis
-      </a>
+    <div class="mt-8 sm:mt-12 flex flex-row gap-3 sm:gap-4 items-center justify-center">
       <a
         href="/proyectos"
-        class="px-8 py-3 sm:px-10 sm:py-4 bg-white/20 backdrop-blur-sm text-white font-bold text-xs sm:text-sm tracking-widest rounded-full
-               shadow-2xl hover:bg-white/30 hover:scale-105 active:scale-95
-               transition-all duration-300 ease-out cursor-pointer inline-block border border-white/30 animate-scale-in delay-400"
+        class="px-8 py-3 sm:px-10 sm:py-4 bg-white text-gray-900 font-bold text-xs sm:text-sm tracking-widest rounded-full
+               shadow-2xl hover:bg-pink-50 hover:scale-110 active:scale-95
+               transition-all duration-300 ease-out cursor-pointer inline-block animate-scale-in"
       >
         Ver proyectos
       </a>
       <a
-        href="/blog"
-        class="px-8 py-3 sm:px-10 sm:py-4 bg-white/20 backdrop-blur-sm text-white font-bold text-xs sm:text-sm tracking-widest rounded-full
-               shadow-2xl hover:bg-white/30 hover:scale-105 active:scale-95
-               transition-all duration-300 ease-out cursor-pointer inline-block border border-white/30 animate-scale-in delay-500"
+        href="https://wa.me/522288535112?text=Hola,%20quiero%20una%20cotización"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-12 h-12 rounded-full hover:scale-115 active:scale-95
+               transition-all duration-300 ease-out cursor-pointer  animate-scale-in glass-effect"
       >
-        Ver blog
+        <WhatsappIcon class="w-6 h-6" />
+      </a>
+      <a
+        href="mailto:contacto@geradev.com.mx"
+        class="flex items-center justify-center w-12 h-12 rounded-full hover:scale-115 active:scale-95
+               transition-all duration-300 ease-out cursor-pointer  animate-scale-in glass-effect"
+      >
+        <MailIcon class="w-6 h-6" />
       </a>
     </div>
   </main>
