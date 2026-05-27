@@ -1,7 +1,7 @@
 ---
 title: Oral Clean
 description: Sitio web para clínica dental, desarrollado con diseño moderno y funcional, optimizado para SEO y gestión eficiente de citas y servicios.
-date: 2026-03-16
+date: 2026-03-14
 image: /proyectos/oral-clean.png
 link: "https://oral-clean.vercel.app/"
 tags: ["Web Design", "SEO", "Responsive", "UI/UX"]
