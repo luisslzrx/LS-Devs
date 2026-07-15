@@ -1,75 +1,127 @@
----
-// AboutContent.astro
-// Contenido interior del popup "About"
-// Reemplaza /about-photo.jpg con tu imagen real
----
-
-<div class="flex items-center justify-center relative bg-white rounded-2xl w-full max-w-5xl mx-auto overflow-visible">
-
-  <!-- Botón cerrar — esquina superior derecha -->
-  <button
-    onclick="closeAboutPopup()"
-    class="absolute top-4 right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-900 text-white
-           flex items-center justify-center hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
-    aria-label="Cerrar"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
-    </svg>
-  </button>
-
-  <!-- Layout: imagen izquierda + texto derecha -->
-  <div class="flex flex-col md:flex-row items-stretch pt-8 px-4 sm:px-8 pb-6 sm:pb-10 gap-6 sm:gap-8">
-
-    <!-- Imagen -->
-    <div class="w-full md:w-[45%] flex-shrink-0">
-      <img
-        src="/acerca.webp"
-        alt="About photo"
-        class="w-full h-full object-cover object-center rounded-2xl"
-        style="min-height: 250px; max-height: 400px;"
-      />
-    </div>
-
-    <!-- Texto -->
-    <div class="flex flex-col justify-center gap-4 sm:gap-5 flex-1">
-
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
-        Desarrollo web enfocado en diseño, rendimiento y resultados
-      </h2>
-
-      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
-        Soy desarrollador web freelance especializado en crear sitios modernos, rápidos y visualmente atractivos para marcas, negocios y emprendedores que buscan una presencia digital profesional.
-      </p>
-
-      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
-        Mi enfoque combina diseño UI/UX, desarrollo frontend y optimización web para construir experiencias que no solo se vean bien, sino que también transmitan confianza, mejoren la experiencia del usuario y ayuden a convertir visitas en clientes.
-      </p>
-
-      <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
-        Trabajo en cada proyecto cuidando detalles como rendimiento, estructura responsive, identidad visual y optimización SEO, utilizando tecnologías modernas para lograr sitios escalables y funcionales.
-      </p>
-
-      <!-- Lista con checks -->
-      <ul class="flex flex-col gap-2 sm:gap-3 mt-1">
-        {[
-          "Diseño web moderno y profesional",
-          "Desarrollo responsive para todos los dispositivos",
-          "Optimización de velocidad y rendimiento",
-          "Landing pages y sitios enfocados en conversión",
-          "Interfaces limpias con experiencia UI/UX",
-          "Desarrollo con tecnologías web actuales",
-        ].map((item) => (
-          <li class="flex items-center gap-2 sm:gap-3 text-gray-800 text-xs sm:text-sm font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 text-[#111828] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
-            </svg>
-            {item}
-          </li>
-        ))}
-      </ul>
-
-    </div>
+<section
+  class="relative px-6 py-20 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden"
+>
+  <!-- Título -->
+  <div class="relative z-10 text-center mb-12 apple-reveal">
+    <h2
+      class="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.85] tracking-tight"
+    >
+      Código que<br />habla por sí solo.
+    </h2>
+    <p
+      class="mt-5 text-base md:text-lg text-white/50 max-w-xl mx-auto leading-relaxed"
+    >
+      Cada proyecto es una oportunidad de crear algo que funcione, se vea bien y
+      genere resultados reales.
+    </p>
   </div>
 
-</div>
+  <!-- Contenedor de video: simula la pantalla/app de la imagen -->
+  <div class="relative z-10 w-full max-w-5xl apple-reveal" style="transition-delay: 150ms;">
+    <!-- Marco tipo device -->
+    <div
+      class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+      style="background: #111; box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06);"
+    >
+      <!-- Barra superior tipo app -->
+      <div
+        class="flex items-center justify-between px-5 py-3 border-b border-white/[0.06]"
+        style="background: #161616;"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+          </div>
+          <span class="text-xs text-white/30 font-medium ml-2"
+            >geradev.com.mx</span
+          >
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-32 h-5 rounded-md bg-white/[0.06]"></div>
+        </div>
+        <div class="w-16"></div>
+      </div>
+
+      <!-- Video -->
+      <div
+        class="relative w-full aspect-video bg-[#0d0d0d] flex items-center justify-center group"
+      >
+        <video
+          src="/Video/video4.mp4"
+          loop
+          muted
+          playsinline
+          id="acercaVideo"
+          class="w-full h-full object-cover"></video>
+
+        <!-- Overlay oscuro inicial + botón play -->
+        <div
+          id="acercaVideoOverlay"
+          class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300"
+        >
+          <button
+            id="acercaVideoBtn"
+            class="w-16 h-16 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/25 transition"
+          >
+            <svg
+              id="acercaBtnIcon"
+              class="w-6 h-6 text-white ml-1"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 3l14 9-14 9V3z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resplandor debajo del device -->
+    <div
+      class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-20 pointer-events-none"
+      style="background: radial-gradient(ellipse, rgba(80,193,252,0.15), transparent 70%); filter: blur(20px);"
+    >
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const video = document.getElementById("acercaVideo");
+    const overlay = document.getElementById("acercaVideoOverlay");
+    const btn = document.getElementById("acercaVideoBtn");
+    const icon = document.getElementById("acercaBtnIcon");
+
+    const playIcon = '<path d="M5 3l14 9-14 9V3z"/>';
+    const pauseIcon = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+    btn.addEventListener("click", function () {
+      if (video.paused) {
+        video.play();
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+        icon.innerHTML = pauseIcon;
+      } else {
+        video.pause();
+        overlay.style.opacity = "1";
+        overlay.style.pointerEvents = "auto";
+        icon.innerHTML = playIcon;
+      }
+    });
+
+    // Mostrar controles al hacer hover sobre el video
+    const wrapper = overlay.parentElement;
+    wrapper.addEventListener("mouseenter", function () {
+      overlay.style.opacity = "1";
+      overlay.style.pointerEvents = "auto";
+    });
+    wrapper.addEventListener("mouseleave", function () {
+      if (!video.paused) {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }
+    });
+  })();
+</script>

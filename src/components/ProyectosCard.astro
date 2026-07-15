@@ -1,46 +1,21 @@
 ---
-const { title, description, image, url, date, tags = [] } = Astro.props;
+const { title, image, link, tags = [], description, date } = Astro.props;
 ---
 
-<a
-  href={url}
-  target="_blank"
-  class="block glass-container rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-xl"
->
-  <!-- Imagen -->
-  <div class="relative overflow-hidden">
-    <img src={image} alt={title} class="w-full h-48 object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent">
-    </div>
-  </div>
-
-  <!-- Contenido -->
-  <div class="p-6">
-    <!-- Fecha -->
-    <p class="text-sm opacity-70 flex items-center gap-2">
-      🚀 Proyecto · {date.toLocaleDateString()}
-    </p>
-
-    <!-- Título -->
-    <h3 class="text-xl font-bold mt-3 hover:text-cyan-400 transition-colors">
+<div class="snap-start flex-shrink-0 w-[85vw] sm:w-[370px] md:w-[700px] h-[300px] sm:h-[450px] md:h-[500px] bg-[#1d1d1f] rounded-3xl overflow-hidden flex flex-col relative">
+  <!-- Text top -->
+  <div class="p-6 pb-2">
+    <p class="text-sm text-[#a1a1a6] mb-1">{tags[0] || 'Proyecto'}</p>
+    <h3 class="text-2xl font-bold text-white leading-snug">
       {title}
     </h3>
-
-    <!-- Descripción -->
-    <p class="mt-3">
-      {description}
-    </p>
-
-    <!--tags -->
-
-    <div class="mt-4 flex flex-wrap gap-2">
-      {
-        tags.map((tag) => (
-          <span class="text-xs px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded">
-            {tag}
-          </span>
-        ))
-      }
-    </div>
   </div>
-</a>
+  <!-- Image fills rest -->
+  <div class="flex-1 relative mt-4">
+    <img
+      src={image}
+      alt={title}
+      class="absolute inset-0 w-full h-full object-cover object-top"
+    />
+  </div>
+</div>

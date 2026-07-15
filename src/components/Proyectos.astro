@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+import ProyectosCard from "./ProyectosCard.astro";
+
+const proyectos = await getCollection("proyectos");
+proyectos.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+const proyectosLimitados = proyectos.slice(0, 5);
+---
+
+<section class="px-6 py-16 md:px-12 lg:px-20 min-h-screen pt-24 md:pt-40"
+style="background: radial-gradient(ellipse 70% 60% at 20% 40%, rgba(80,100,160,0.45), transparent 65%),
+         radial-gradient(ellipse 60% 50% at 80% 70%, rgba(100,80,140,0.35), transparent 60%),
+         radial-gradient(ellipse 80% 80% at 50% 50%, rgba(40,50,80,0.6), transparent 80%),
+         #000000;">
+
+  <div class="relative z-10 text-center mb-12 apple-reveal">
+    <h2 class="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.85] tracking-tight">
+      Código que<br />habla por sí solo.
+    </h2>
+    <p class="mt-5 text-base md:text-lg text-white/50 max-w-xl mx-auto leading-relaxed">
+      Cada proyecto es una oportunidad de crear algo que funcione, se vea bien y genere resultados reales.
+    </p>
+  </div>
+
+  <!-- Cards carousel -->
+  <div class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide -mr-6 md:-mr-12 lg:-mr-20 pr-6 md:pr-12 lg:pr-20 apple-reveal" style="transition-delay: 150ms;">
+    {
+      proyectosLimitados.map((proyecto) => (
+        <ProyectosCard
+          title={proyecto.data.title}
+          description={proyecto.data.description}
+          image={proyecto.data.image}
+          link={proyecto.data.link}
+          date={proyecto.data.date}
+          tags={proyecto.data.tags}
+        />
+      ))
+    }
+  </div>
+
+  <!-- Botón ver todos los proyectos -->
+  <div class="flex justify-center mt-12">
+    <a href="/proyectos"
+      class="px-10 py-4 rounded-full border border-white/25 text-white text-base font-semibold hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-200">
+      Ver todos los proyectos
+    </a>
+  </div>
+
+</section>
+
+<script is:inline>
+  let activePopup = null;
+
+  function openPopup(projectId) {
+    if (activePopup) {
+      const popup = document.getElementById(`popup-${activePopup}`);
+      const content = popup?.querySelector('.popup-content');
+      if (popup) {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+        if (content) content.classList.remove('show');
+      }
+    }
+
+    const popup = document.getElementById(`popup-${projectId}`);
+    const content = popup?.querySelector('.popup-content');
+    if (popup) {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      setTimeout(() => {
+        if (content) content.classList.add('show');
+      }, 10);
+      activePopup = projectId;
+    }
+  }
+
+  function closePopup() {
+    if (activePopup) {
+      const popup = document.getElementById(`popup-${activePopup}`);
+      const content = popup?.querySelector('.popup-content');
+      if (popup) {
+        if (content) content.classList.remove('show');
+        setTimeout(() => {
+          popup.classList.add('hidden');
+          popup.classList.remove('flex');
+        }, 300);
+      }
+      activePopup = null;
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePopup();
+  });
+
+  window.openPopup = openPopup;
+  window.closePopup = closePopup;
+</script>

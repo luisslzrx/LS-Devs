@@ -1,7 +1,7 @@
 ---
-import LayoutInterna from "../layouts/LayoutInterna.astro";
+import LayoutInterna from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import ProyectosCard from "../components/ProyectosCard.astro";
+import ProyectoGridCard from "../components/ProyectoGridCard.astro";
 
 const proyectos = await getCollection("proyectos");
 
@@ -9,45 +9,79 @@ proyectos.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <LayoutInterna
-title="geradev | Sitios web profesionales para tu negocio"
-description="Proyectos de desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías."
-url="https://geradev.com.mx/proyectos"
+  title="Proyectos de Desarrollo Web | Portafolio Geradev"
+  description="Explora proyectos de desarrollo web, landing pages y tiendas en línea creadas para negocios que buscan crecer con una presencia digital profesional."
+  keywords="Proyectos de desarrollo web, Portafolio de desarrollo web, Ejemplos de páginas web, Diseño web profesional, Casos de éxito, Landing pages, Tiendas en línea, Páginas web empresariales"
+  url="https://geradev.com.mx/proyectos"
 >
 
-<main class="w-full min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32 pb-24">
+  <main class="w-full min-h-screen pt-32 pb-24">
 
-<section class="w-full max-w-[1200px] mx-auto px-6 md:px-8">
+    <section class="w-full max-w-[1200px] mx-auto px-6 md:px-8">
 
-  <!-- Banner -->
-  <div class="relative w-full min-h-[300px] flex items-center mb-16">
-    <div class="max-w-2xl">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
-        Mis proyectos
-      </h1>
-      <p class="mt-6 text-lg md:text-xl text-white/85 leading-relaxed font-light">
-        Proyectos de desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías
-      </p>
-    </div>
-  </div>
+      <!-- Header -->
+      <div class="mb-16">
+        <p class="text-sm font-medium text-white/40 mb-4 tracking-wide">Portafolio</p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+          Proyectos de Desarrollo Web
+        </h1>
+        <p class="text-lg md:text-xl text-white/40 leading-relaxed max-w-2xl">
+          Desarrollo web, aplicaciones y soluciones construidas con diferentes tecnologías para negocios reales.
+        </p>
+      </div>
 
-  <!-- GRID -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- GRID dinámico -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    {proyectos.map(proyecto => (
-      <ProyectosCard
-        title={proyecto.data.title}
-        description={proyecto.data.description}
-        image={proyecto.data.image}
-        url={proyecto.data.link}
-        date={proyecto.data.date}
-        tags={proyecto.data.tags}
-  />
-    ))}
+        {proyectos.map((proyecto, index) => (
+          <div
+            class="project-reveal"
+            style={`transition-delay: ${(index % 6) * 60}ms`}
+          >
+            <ProyectoGridCard
+              title={proyecto.data.title}
+              description={proyecto.data.description}
+              image={proyecto.data.image}
+              link={proyecto.data.link}
+              date={proyecto.data.date}
+              tags={proyecto.data.tags}
+            />
+          </div>
+        ))}
 
-  </div>
+      </div>
 
-</section>
+    </section>
 
-</main>
+  </main>
 
 </LayoutInterna>
+
+<style>
+  .project-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .project-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+(function () {
+  const items = document.querySelectorAll('.project-reveal');
+
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>

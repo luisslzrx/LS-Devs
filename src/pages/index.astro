@@ -1,12 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero2 from "../components/Hero2.astro";
+import Hero from "../components/Hero.astro";
+import Servicios from "../components/Servicios.astro";
+import AcercaDeMi from "../components/AcercaDeMi.astro";
+import CTA from "../components/CTA.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Contacto from "../components/Contacto.astro";
+import Testimonios from "../components/Testimonios.astro";
+import Precios from "../components/Precios.astro";
 ---
 
-<Layout>
+<Layout
+  title="Desarrollo de Páginas Web para Negocios | Geradev"
+  description="Desarrollo de páginas web profesionales para negocios. Sitios rápidos, modernos, optimizados para SEO y diseñados para generar más clientes."
+  keywords="Desarrollo de páginas web, Páginas web para negocios, Diseño web profesional, Desarrollo web, Desarrollo de sitios web, Crear página web, Páginas web modernas, Diseño de páginas web, Desarrollo e-commerce"
+>
   <main class="w-full mx-auto overflow-visible">
     <section>
-      <Hero2 />
+      <Hero />
+    </section>
+    <section>
+      <AcercaDeMi />
+    </section>
+    <section>
+      <Servicios />
+    </section>
+    <section>
+      <CTA />
+    </section>
+    <section>
+      <Proyectos />
+    </section>
+    <section>
+      <Testimonios />
+    </section>
+    <section>
+      <Precios />
+    </section>
+    <section>
+      <Contacto />
     </section>
   </main>
 </Layout>

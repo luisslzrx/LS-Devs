@@ -1,5 +1,5 @@
 ---
-import LayoutInterna from "../layouts/LayoutInterna.astro";
+import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import PostCard from "../components/PostCard.astro";
 
@@ -8,9 +8,10 @@ const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<LayoutInterna
-  title="Blog de Desarrollo Web | geradev"
-  description="Artículos sobre desarrollo de páginas web, landing pages y tiendas online en México. Estrategias para negocios que buscan atraer clientes y crecer en internet."
+<Layout
+  title="Blog de Desarrollo Web, Diseño Web y SEO | Geradev"
+  description="Aprende sobre desarrollo web, diseño web, SEO, comercio electrónico y estrategias para hacer crecer tu negocio en Internet."
+  keywords="Blog de desarrollo web, Diseño web, SEO, Páginas web, Marketing digital, Tiendas en línea, Experiencia de usuario, Desarrollo web profesional"
   url="https://geradev.com.mx/blog"
 >
 
@@ -22,7 +23,7 @@ posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
   <div class="relative w-full min-h-[300px] flex items-center mb-16">
     <div class="max-w-2xl">
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
-        Mi blog
+        Blog de Desarrollo Web
       </h1>
       <p class="mt-6 text-lg md:text-xl text-white/85 leading-relaxed font-light">
         Artículos sobre desarrollo web, Astro, JavaScript, SEO técnico y experiencias construyendo proyectos web

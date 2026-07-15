@@ -1,579 +1,298 @@
 ---
-import Github from "./icons/GithubIcon.astro";
-import Linkedin from "./icons/LinkedinIcon.astro";
-import Whatsapp from "./icons/WhatsappIcon.astro";
-import Instagram from "./icons/InstagramIcon.astro";
-import AcercaDeMiIcon from "./icons/AcercaDeMi-Icon.astro";
-import BeneficiosIcon from "./icons/Beneficios-Icon.astro";
-import TestimoniosIcon from "./icons/Testimoniales-Icon.astro";
-import PortafolioIcon from "./icons/Portafolio-Icon.astro";
-import PreciosIcon from "./icons/Precios-Icon.astro";
-import ContactoIcon from "./icons/Contacto-Icon.astro";
-import ServiciosIcon from "./icons/Servicios-Icon.astro";
-
-// Componentes
-import AcercaDeMi from "./AcercaDeMi.astro";
-import Servicios from "./Servicios.astro";
-import Precios from "./Precios.astro";
-import Portafolio from "./Portafolio.astro";
-import Beneficios from "./Beneficios.astro";
-import TestimonialsContent from "./Testimonios.astro";
-import Contacto from "./Contacto.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import FacebookIcon from "./icons/FacebookIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
 ---
 
-<!-- NAVBAR: logo + social icons -->
 <header
-  class="fixed top-0 left-0 right-0 z-50 w-full flex items-center justify-between px-4 sm:px-8 py-5"
+  id="mainHeader"
+  class="fixed top-0 left-1/2 -translate-x-1/2 w-full z-50 transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]"
 >
-  <!-- Logo -->
-  <a href="/" class="flex items-center justify-center w-16 h-16 sm:w-24 sm:h-24">
-    <img
-      src="/geradev.png"
-      alt="Geradev Logo"
-      class="w-full h-full object-contain"
-    />
-  </a>
 
-  <!-- Social Icons (ocultos en móvil) -->
-  <nav class="hidden md:flex items-center gap-5">
+<!-- MOBILE / TABLET HEADER -->
+<div class="md:hidden flex items-center justify-between px-6 py-4 glass-container">
 
-    <!-- Githib -->
+  <div class="text-xl font-bold">
+    Luis Salazar
+  </div>
+
+  <button id="menuButton" class="flex flex-col gap-1.5">
+    <span class="w-6 h-[2px] bg-current"></span>
+    <span class="w-6 h-[2px] bg-current"></span>
+    <span class="w-6 h-[2px] bg-current"></span>
+  </button>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+<div
+  id="mobileMenu"
+  class="md:hidden hidden flex flex-col gap-6 px-6 pb-6 pt-2 backdrop-blur-xl glass-container"
+>
+
+  <a href="/" class="menuLink hover:text-blue-600 transition-colors">
+        Inicio
+      </a>
+
+      <a href="/proyectos" class="menuLink hover:text-blue-600 transition-colors">
+        Proyectos
+      </a>
+
+      <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
+        Blog
+      </a>
+
+      <a href="/#contacto" class="menuLink hover:text-blue-600 transition-colors">
+        Contacto
+      </a>
+
+  <div class="flex items-center gap-6 pt-4 border-t border-slate-700">
+
+    <a
+      href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar"
+      target="_blank"
+      class=" hover:text-blue-400 transition-colors"
+    >
+      <LinkedinIcon class="w-5 h-5" />
+    </a>
+
     <a
       href="https://github.com/luisslzrx"
       target="_blank"
-      rel="noopener noreferrer"
-      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+      class=" hover:text-gray-400 transition-colors"
     >
-      <Github class="w-5 h-5" />
+      <GithubIcon class="w-5 h-5" />
     </a>
 
-    <!-- Linkend -->
     <a
-      href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+      href="https://www.instagram.com/geradevx/"
       target="_blank"
-      rel="noopener noreferrer"
-      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+      class=" hover:text-pink-500 transition-colors"
     >
-      <Linkedin class="w-5 h-5" />
+      <InstagramIcon class="w-5 h-5" />
     </a>
 
-    <!-- Instagram -->
     <a
-      href="https://instagram.com/geradevx"
+      href="https://www.facebook.com/people/Geradev/61590062657544/"
       target="_blank"
-      rel="noopener noreferrer"
-      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
+      class=" hover:text-blue-500 transition-colors"
     >
-      <Instagram class="w-5 h-5" />
+      <FacebookIcon class="w-5 h-5" />
     </a>
 
-    <!-- Whatsapp -->
-    <a
-      href="https://wa.me/525632193996?text=Hola%20Geradev,%20me%20gustaría%20cotizar%20un%20sitio%20web%20o%20pedir%20información"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-white transition-transform duration-200 hover:scale-125 inline-block"
-    >
-      <Whatsapp class="w-5 h-5" />
-    </a>
 
-  </nav>
+  </div>
 
-  <!-- Menú Hamburguesa (visible solo en móvil) -->
-  <button
-    onclick="toggleMobileMenu()"
-    class="md:hidden flex flex-col gap-1.5 p-2 text-white"
-  >
-    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-1"></span>
-    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-2"></span>
-    <span class="w-6 h-0.5 bg-white transition-all duration-300" id="menu-line-3"></span>
-  </button>
-</header>
+</div>
 
-<!-- Menú Móvil Desplegable -->
-<div
-  id="mobileMenu"
-  class="fixed inset-0 z-40 hidden bg-black/95 backdrop-blur-lg transition-all duration-300 ease-in-out opacity-0 translate-y-full"
->
-  <div class="flex flex-col items-center justify-start h-full gap-3 px-6 pb-20 pt-32">
-    <!-- Sobre mí -->
-    <button
-      onclick="openAboutPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <AcercaDeMiIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Sobre mí</span>
-    </button>
 
-    <!-- Servicios -->
-    <button
-      onclick="openServicesPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <ServiciosIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Servicios</span>
-    </button>
+<!-- DESKTOP HEADER -->
+<nav class="hidden md:block max-w-6xl mx-auto px-6 py-4 transition-all duration-500">
+  
+  <div class="flex justify-between items-center">
 
-    <!-- Beneficios -->
-    <button
-      onclick="openBenefitsPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <BeneficiosIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Beneficios</span>
-    </button>
+    <div id="logoBlock" class="text-xl font-bold transition-all duration-500">
+      Luis Salazar
+    </div>
 
-    <!-- Portafolio -->
-    <button
-      onclick="openGalleryPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <PortafolioIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Portafolio</span>
-    </button>
-
-    <!-- Precios -->
-    <button
-      onclick="openPricingPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <PreciosIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Precios</span>
-    </button>
-
-    <!-- Testimonios -->
-    <button
-      onclick="openTestimonialsPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <TestimoniosIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Testimonios</span>
-    </button>
-
-    <!-- Contacto -->
-    <button
-      onclick="openContactPopup(); toggleMobileMenu();"
-      class="flex items-center gap-4 w-full max-w-xs p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-    >
-      <ContactoIcon class="w-6 h-6 text-white" />
-      <span class="text-white font-semibold">Contacto</span>
-    </button>
-
-    <!-- Social Icons en móvil -->
-    <div class="flex items-center gap-6 mt-16">
-      <a
-        href="https://github.com/luisslzrx"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-white transition-transform duration-200 hover:scale-125"
-      >
-        <Github class="w-6 h-6" />
+    <div id="menuBlock" class="flex items-center gap-6 transition-all duration-500">
+      
+      <a href="/" class="menuLink hover:text-blue-600 transition-colors">
+        Inicio
       </a>
+
+      <a href="/proyectos" class="menuLink hover:text-blue-600 transition-colors">
+        Proyectos
+      </a>
+
+      <a href="/blog" class="menuLink hover:text-blue-600 transition-colors">
+        Blog
+      </a>
+
+      <a href="/#contacto" class="menuLink hover:text-blue-600 transition-colors">
+        Contacto
+      </a>
+
+    </div>
+
+    <div id="iconsBlock" class="flex items-center gap-4 transition-all duration-500">
+      
       <a
         href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
         target="_blank"
-        rel="noopener noreferrer"
-        class="text-white transition-transform duration-200 hover:scale-125"
+        class=" hover:text-blue-400 transition-colors"
       >
-        <Linkedin class="w-6 h-6" />
+        <LinkedinIcon class="w-5 h-5" />
       </a>
+
       <a
-        href="https://instagram.com/geradevx"
+        href="https://github.com/luisslzrx"
         target="_blank"
-        rel="noopener noreferrer"
-        class="text-white transition-transform duration-200 hover:scale-125"
+        class=" hover:text-gray-400 transition-colors"
       >
-        <Instagram class="w-6 h-6" />
+        <GithubIcon class="w-5 h-5" />
       </a>
+
       <a
-        href="https://wa.me/525632193996?text=Hola%20Geradev,%20me%20gustaría%20cotizar%20un%20sitio%20web%20o%20pedir%20información"
+        href="https://www.instagram.com/geradevx/"
         target="_blank"
-        rel="noopener noreferrer"
-        class="text-white transition-transform duration-200 hover:scale-125"
+        class=" hover:text-pink-500 transition-colors"
       >
-        <Whatsapp class="w-6 h-6" />
+        <InstagramIcon class="w-5 h-5" />
       </a>
+
+      <a
+        href="https://www.facebook.com/people/Geradev/61590062657544/"
+        target="_blank"
+        class=" hover:text-blue-500 transition-colors"
+      >
+        <FacebookIcon class="w-5 h-5" />
+      </a>
+
+      <ThemeToggle />
+
     </div>
+
   </div>
-</div>
+
+</nav>
+
+</header>
 
 <style>
-  .popup-overlay {
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
-  }
-  .popup-overlay.show { opacity: 1; }
 
-  .popup-content {
-    transform: scale(0.9) translateY(20px);
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-  @media (max-width: 768px) {
-    .popup-content {
-      max-height: 75vh;
-    }
-  }
-  .popup-content.show {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  .popup-content::-webkit-scrollbar {
-    width: 6px;
-  }
-  .popup-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
-  .popup-content::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-  .popup-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+.menuLink{
+  white-space:nowrap;
+}
 
-  /* Animación del menú hamburguesa */
-  .menu-open #menu-line-1 {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .menu-open #menu-line-2 {
-    opacity: 0;
-  }
-  .menu-open #menu-line-3 {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
+/* Animación de línea para los enlaces y redes sociales */
+.menuLink,
+#iconsBlock a,
+#mobileMenu .flex a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+.menuLink::after,
+#iconsBlock a::after,
+#mobileMenu .flex a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #50c1fc;
+  transition: width 0.25s ease;
+}
+
+.menuLink:hover::after,
+#iconsBlock a:hover::after,
+#mobileMenu .flex a:hover::after {
+  width: 100%;
+}
+
+/* Transición suave del header */
+#mainHeader {
+  transition: background 0.5s ease, border-radius 0.5s ease,
+    width 0.5s ease, top 0.5s ease, padding 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* SCROLL EFFECT SOLO DESKTOP */
+
+@media (min-width:768px){
+
+#mainHeader.scrolled{
+
+  width:auto;
+
+  top:18px;
+
+  border-radius:9999px;
+
+  padding-left:18px;
+  padding-right:28px;
+
+
+  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+}
+
+#mainHeader.scrolled #logoBlock{
+  opacity:0;
+  transform:scale(.8);
+  pointer-events:none;
+}
+
+#mainHeader.scrolled #iconsBlock{
+  opacity:0;
+  transform:scale(.8);
+  pointer-events:none;
+}
+
+#mainHeader.scrolled #menuBlock{
+  gap:32px;
+  font-size:0.9rem;
+}
+
+#mainHeader.scrolled nav{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+}
+
 </style>
 
-<!-- Popup About -->
-<div id="aboutPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeAboutPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <AcercaDeMi />
-    </div>
-  </div>
-</div>
+<script>
 
-<!-- Popup Services -->
-<div id="servicesPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeServicesPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Servicios />
-    </div>
-  </div>
-</div>
+const header = document.getElementById("mainHeader");
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
 
-<!-- Popup Precios -->
-<div id="pricingPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closePricingPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Precios />
-    </div>
-  </div>
-</div>
+/* scroll animation solo desktop */
 
-<!-- Popup Portafolio -->
-<div id="galleryPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeGalleryPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Portafolio />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Beneficios -->
-<div id="benefitsPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeBenefitsPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Beneficios />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Testimonios -->
-<div id="testimonialsPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeTestimonialsPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <TestimonialsContent />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Contacto -->
-<div id="contactPopup" class="fixed inset-0 z-[60] hidden">
-  <div
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeContactPopup()"
-  ></div>
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Contacto />
-    </div>
-  </div>
-</div>
-
-<script is:inline>
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const body = document.body;
-    if (menu) {
-      if (menu.classList.contains('hidden')) {
-        // Abrir menú
-        menu.classList.remove('hidden');
-        body.classList.add('menu-open');
-        body.style.overflow = 'hidden';
-        requestAnimationFrame(() => {
-          menu.classList.remove('opacity-0', 'translate-y-full');
-          menu.classList.add('opacity-100', 'translate-y-0');
-        });
-      } else {
-        // Cerrar menú
-        menu.classList.remove('opacity-100', 'translate-y-0');
-        menu.classList.add('opacity-0', 'translate-y-full');
-        body.classList.remove('menu-open');
-        setTimeout(() => {
-          menu.classList.add('hidden');
-          body.style.overflow = 'auto';
-        }, 300);
-      }
+window.addEventListener("scroll", () => {
+  if (window.innerWidth >= 768) {
+    if (window.scrollY > 60) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
     }
   }
+});
 
-  function openAboutPopup() {
-    const popup = document.getElementById('aboutPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
+/* mobile menu toggle */
+menuButton?.addEventListener("click", () => {
+  mobileMenu?.classList.toggle("hidden");
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener("click", (e: Event) => {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuButton = document.getElementById("menuButton");
+  
+  if (window.innerWidth < 768 && 
+      mobileMenu &&
+      !menuButton?.contains(e.target as Node) &&
+      !mobileMenu.contains(e.target as Node) &&
+      !mobileMenu.classList.contains("hidden")) {
+    mobileMenu.classList.add("hidden");
   }
+});
 
-  function closeAboutPopup() {
-    const popup = document.getElementById('aboutPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openServicesPopup() {
-    const popup = document.getElementById('servicesPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closeServicesPopup() {
-    const popup = document.getElementById('servicesPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openPricingPopup() {
-    const popup = document.getElementById('pricingPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closePricingPopup() {
-    const popup = document.getElementById('pricingPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openGalleryPopup() {
-    const popup = document.getElementById('galleryPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closeGalleryPopup() {
-    const popup = document.getElementById('galleryPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openBenefitsPopup() {
-    const popup = document.getElementById('benefitsPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closeBenefitsPopup() {
-    const popup = document.getElementById('benefitsPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openTestimonialsPopup() {
-    const popup = document.getElementById('testimonialsPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closeTestimonialsPopup() {
-    const popup = document.getElementById('testimonialsPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  function openContactPopup() {
-    const popup = document.getElementById('contactPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      }, 10);
-    }
-  }
-
-  function closeContactPopup() {
-    const popup = document.getElementById('contactPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 300);
-    }
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeAboutPopup();
-      closeServicesPopup();
-      closePricingPopup();
-      closeGalleryPopup();
-      closeBenefitsPopup();
-      closeTestimonialsPopup();
-      closeContactPopup();
-      const menu = document.getElementById('mobileMenu');
-      if (menu && !menu.classList.contains('hidden')) {
-        toggleMobileMenu();
-      }
-    }
-  });
 </script>

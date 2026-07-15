@@ -1,0 +1,74 @@
+---
+import WhatsappIcon from "./icons/WhatsappIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+---
+
+<section class="relative w-full h-screen overflow-hidden bg-black text-white">
+  <!-- VIDEO FONDO -->
+  <video
+    src="/Video/video.mp4"
+    autoplay
+    loop
+    muted
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"></video>
+
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-black/55 z-[1]"></div>
+
+  <!-- CONTENIDO CENTRADO -->
+  <div
+    class="relative z-10 flex h-full flex-col items-center justify-center text-center px-8 md:px-16 lg:px-32 xl:px-48"
+  >
+    <h2
+      class="text-sm md:text-base font-medium tracking-wide mb-8 text-white/80"
+    >
+      GERADEV · Páginas Web Profesionales
+    </h2>
+
+    <h1
+      class="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.85] tracking-tight mt-8"
+    >
+      Desarrollo de Páginas Web
+    </h1>
+
+    <p
+      class="max-w-xl text-base md:text-lg font-semibold leading-relaxed mt-6 mb-12 text-white/90"
+    >
+      Creamos páginas web, landing pages y tiendas en línea optimizadas para
+      SEO, velocidad y conversión, diseñadas para impulsar el crecimiento de tu
+      negocio.
+    </p>
+
+    <div class="flex flex-col md:flex-row items-center gap-6">
+      <a
+        href="#contacto"
+        class="px-10 py-4 bg-white text-black text-base md:text-lg font-semibold rounded-full hover:bg-white/90 hover:scale-105 active:scale-95 transition-all duration-200"
+      >
+        Cotizar proyecto
+      </a>
+
+      <div class="flex items-center gap-5">
+        <a
+          href="https://wa.me/525632193996"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-white/15 backdrop-blur-md hover:bg-white/25 hover:scale-110 active:scale-95 transition-all duration-200"
+        >
+          <WhatsappIcon class="w-5 h-5" />
+        </a>
+
+        <a
+          href="mailto:contacto@geradev.com.mx"
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-white/15 backdrop-blur-md hover:bg-white/25 hover:scale-110 active:scale-95 transition-all duration-200"
+        >
+          <MailIcon class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+
+    <p class="absolute bottom-10 text-xs md:text-sm text-white/50">
+      Landing pages · Sitios web · Tiendas online · Diseño responsive
+    </p>
+  </div>
+</section>

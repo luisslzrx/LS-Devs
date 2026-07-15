@@ -20,7 +20,7 @@ const {
 	title = "Páginas web para negocios en México | geradev",
 	description = "Diseño y desarrollo de páginas web profesionales para negocios locales en México. Precios accesibles, entrega rápida y soporte incluido. Solicita cotización gratis.",
 	keywords = "desarrollo de páginas web en CDMX, diseñador web freelance México, diseño web para negocios, desarrollo web profesional México, creación de páginas web",
-	image = "/logo-LS-transparente.png",
+	image = "/geradev.png",
 	url = "https://geradev.com.mx/",
 	author = "Luis Salazar",
 	type = "website",
@@ -31,17 +31,16 @@ const {
 ---
 
 <!doctype html>
-<html lang="es-MX">
+<html lang="es-MX" class="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href="/logo-LS-transparente.png"
+			href="/favicon.svg"
 		/>
-		<link rel="icon" href="/logo-LS-transparente.png" />
-		<link rel="icon" type="image/png" href="/logo-LS-transparente.png" />
+		<link rel="icon" type="image/png" href="/favicon-luis.png" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Google Analytics -->
@@ -199,5 +198,320 @@ const {
 		<Header />
 		<slot />
 		<Footer />
+
+		<!-- WhatsApp Float Button -->
+		<button id="whatsappButton" class="whatsapp-float">
+			<svg viewBox="0 0 24 24" fill="currentColor" class="whatsapp-icon">
+				<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+			</svg>
+		</button>
+
+		<!-- WhatsApp Chat Popup -->
+		<div id="whatsappChat" class="whatsapp-chat hidden">
+			<div class="chat-header">
+				<div class="chat-header-content">
+					<svg viewBox="0 0 24 24" fill="currentColor" class="chat-header-icon">
+						<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+					</svg>
+					<div>
+						<p class="chat-header-title">WhatsApp</p>
+						<p class="chat-header-subtitle">Responde en minutos</p>
+					</div>
+				</div>
+				<button id="closeChat" class="close-chat">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M18 6L6 18M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+			<div class="chat-body">
+				<p class="chat-message">¡Hola! ¿En qué puedo ayudarte hoy?</p>
+			</div>
+			<div class="chat-footer">
+				<textarea id="whatsappMessage" placeholder="Escribe tu mensaje..." rows="3">Hola, quiero información</textarea>
+				<button id="sendWhatsApp" class="send-button">
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<style>
+			.whatsapp-float {
+				position: fixed;
+				bottom: 24px;
+				right: 24px;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 1000;
+				/* Liquid Glass Effect - transparent without shadows */
+				background: rgba(255, 255, 255, 0.15);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.whatsapp-float:hover {
+				background: rgba(255, 255, 255, 0.25);
+				transform: scale(1.1);
+			}
+
+			.whatsapp-icon {
+				width: 32px;
+				height: 32px;
+				color: white;
+			}
+
+			.whatsapp-chat {
+				position: fixed;
+				bottom: 100px;
+				right: 24px;
+				width: 320px;
+				max-width: calc(100vw - 48px);
+				border-radius: 16px;
+				z-index: 999;
+				display: flex;
+				flex-direction: column;
+				overflow: hidden;
+				transition: all 0.3s ease;
+				/* Liquid Glass Effect for chat */
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.whatsapp-chat.hidden {
+				display: none;
+			}
+
+			.chat-header {
+				background: rgba(37, 211, 102, 0.2);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				padding: 16px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.chat-header-content {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+
+			.chat-header-icon {
+				width: 40px;
+				height: 40px;
+				color: white;
+			}
+
+			.chat-header-title {
+				color: white;
+				font-weight: 600;
+				font-size: 16px;
+				margin: 0;
+			}
+
+			.chat-header-subtitle {
+				color: rgba(255, 255, 255, 0.9);
+				font-size: 12px;
+				margin: 2px 0 0 0;
+			}
+
+			.close-chat {
+				background: none;
+				border: none;
+				color: white;
+				cursor: pointer;
+				padding: 4px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.close-chat svg {
+				width: 20px;
+				height: 20px;
+			}
+
+			.chat-body {
+				padding: 16px;
+				background: rgba(255, 255, 255, 0.05);
+			}
+
+			.chat-message {
+				background: rgba(255, 255, 255, 0.15);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				padding: 12px;
+				border-radius: 12px;
+				margin: 0;
+				font-size: 14px;
+				color: white;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.chat-footer {
+				padding: 12px;
+				background: rgba(255, 255, 255, 0.05);
+				display: flex;
+				gap: 8px;
+				align-items: flex-end;
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			#whatsappMessage {
+				flex: 1;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 12px;
+				padding: 10px 12px;
+				font-size: 14px;
+				resize: none;
+				outline: none;
+				font-family: inherit;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				color: white;
+			}
+
+			#whatsappMessage::placeholder {
+				color: rgba(255, 255, 255, 0.5);
+			}
+
+			#whatsappMessage:focus {
+				border-color: rgba(37, 211, 102, 0.5);
+				background: rgba(255, 255, 255, 0.15);
+			}
+
+			.send-button {
+				background: rgba(37, 211, 102, 0.3);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border: 1px solid rgba(37, 211, 102, 0.4);
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				flex-shrink: 0;
+			}
+
+			.send-button:hover {
+				background: rgba(37, 211, 102, 0.5);
+				border-color: rgba(37, 211, 102, 0.6);
+			}
+
+			.send-button svg {
+				width: 20px;
+				height: 20px;
+				color: white;
+			}
+
+			@media (max-width: 640px) {
+				.whatsapp-float {
+					bottom: 20px;
+					right: 20px;
+					width: 52px;
+					height: 52px;
+				}
+
+				.whatsapp-icon {
+					width: 28px;
+					height: 28px;
+				}
+
+				.whatsapp-chat {
+					bottom: 85px;
+					right: 20px;
+					width: calc(100vw - 40px);
+				}
+			}
+		</style>
+
+		<script>
+			const whatsappButton = document.getElementById('whatsappButton');
+			const whatsappChat = document.getElementById('whatsappChat');
+			const closeChat = document.getElementById('closeChat');
+			const sendWhatsApp = document.getElementById('sendWhatsApp');
+			const whatsappMessage = document.getElementById('whatsappMessage');
+
+			let isOpen = false;
+
+			whatsappButton.addEventListener('click', () => {
+				isOpen = !isOpen;
+				if (isOpen) {
+					whatsappChat.classList.remove('hidden');
+				} else {
+					whatsappChat.classList.add('hidden');
+				}
+			});
+
+			closeChat.addEventListener('click', () => {
+				isOpen = false;
+				whatsappChat.classList.add('hidden');
+			});
+
+			sendWhatsApp.addEventListener('click', () => {
+				const message = whatsappMessage.value.trim();
+				if (message) {
+					const encodedMessage = encodeURIComponent(message);
+					const whatsappUrl = `https://wa.me/525632193996?text=${encodedMessage}`;
+					window.open(whatsappUrl, '_blank');
+					whatsappMessage.value = '';
+					isOpen = false;
+					whatsappChat.classList.add('hidden');
+				}
+			});
+
+			whatsappMessage.addEventListener('keypress', (e) => {
+				if (e.key === 'Enter' && !e.shiftKey) {
+					e.preventDefault();
+					sendWhatsApp.click();
+				}
+			});
+		</script>
+
+		<script>
+			// Global Apple-like reveal animation using IntersectionObserver
+			(function () {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('revealed');
+							observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					root: null,
+					threshold: 0.05,
+					rootMargin: '0px 0px -50px 0px'
+				});
+
+				function initReveals() {
+					const elements = document.querySelectorAll('.apple-reveal');
+					elements.forEach((el) => observer.observe(el));
+				}
+
+				// Run immediately
+				initReveals();
+
+				// Re-run if page content changes (e.g. navigation)
+				document.addEventListener('astro:page-load', initReveals);
+			})();
+		</script>
 	</body>
 </html>

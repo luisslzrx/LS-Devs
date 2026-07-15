@@ -1,5 +1,5 @@
 ---
-import LayoutInterna from "../../layouts/LayoutInterna.astro";
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -16,7 +16,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<LayoutInterna
+<Layout
   title={`${post.data.title} | Blog`}
   description={post.data.description}
   url={`https://geradev.com.mx/blog/${post.slug}`}

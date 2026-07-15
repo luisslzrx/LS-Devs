@@ -1,507 +1,263 @@
 ---
-import AcercaDeMi from "./AcercaDeMi.astro";
-import Servicios from "./Servicios.astro";
-import Precios from "./Precios.astro";
-import Portafolio from "./Portafolio.astro";
-import Beneficios from "./Beneficios.astro";
-import TestimonialsContent from "./Testimonios.astro";
-import Contacto from "./Contacto.astro";
-
-//Iconos
-import AcercaDeMiIcon from "./icons/AcercaDeMi-Icon.astro";
-import BeneficiosIcon from "./icons/Beneficios-Icon.astro";
-import TestimoniosIcon from "./icons/Testimoniales-Icon.astro";
-import PortafolioIcon from "./icons/Portafolio-Icon.astro";
-import PreciosIcon from "./icons/Precios-Icon.astro";
-import ContactoIcon from "./icons/Contacto-Icon.astro";
-import ServiciosIcon from "./icons/Servicios-Icon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import WhatsappIcon from "./icons/WhatsappIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import FacebookIcon from "./icons/FacebookIcon.astro";
 ---
 
-<!-- BOTTOM NAV -->
-<footer class="fixed bottom-0 left-0 right-0 z-50 w-full">
-  <!-- Botones de navegación (ocultos en móvil) -->
-  <nav class="hidden md:flex items-end justify-around px-4 py-5 bg-gradient-to-t from-black via-black/30 to-transparent">
-    <div class="w-full max-w-[1100px] mx-auto flex items-end justify-around">
-
-    <!-- Acerca de mi -->
-    <button
-      onclick="openAboutPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+<!-- Pill flotante (siempre visible) -->
+<div
+  id="footerPill"
+  class="fixed bottom-5 left-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]"
+>
+  <div
+    id="pillInner"
+    class="flex items-center gap-4 px-5 py-3 rounded-full transition-all duration-500"
+    style="
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+    "
+  >
+    <span class="text-sm font-bold text-white whitespace-nowrap"
+      >Luis Salazar</span
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <AcercaDeMiIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Sobre mí</span>
-    </button>
 
-    <!-- Servicios -->
-    <button
-      onclick="openServicesPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+    <div class="w-px h-4 bg-white/20"></div>
+
+    <a
+      href="https://www.linkedin.com/in/luis-gerardo-salazar-aguilar/"
+      target="_blank"
+      class="text-white/60 hover:text-white transition-colors duration-200"
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <ServiciosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Servicios</span>
-    </button>
-
-
-      <!-- Beneficios -->
-    <button
-      onclick="openBenefitsPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+      <LinkedinIcon class="w-4 h-4" />
+    </a>
+    <a
+      href="https://github.com/luisslzrx"
+      target="_blank"
+      class="text-white/60 hover:text-white transition-colors duration-200"
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <BeneficiosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Beneficios</span>
-    </button>
-
-
-    <!-- Portafolio -->
-    <button
-      onclick="openGalleryPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+      <GithubIcon class="w-4 h-4" />
+    </a>
+    <a
+      href="https://www.instagram.com/geradevx/"
+      target="_blank"
+      class="text-white/60 hover:text-white transition-colors duration-200"
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <PortafolioIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Portafolio</span>
-    </button>
-
-
-    <!-- Precios -->
-    <button
-      onclick="openPricingPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+      <InstagramIcon class="w-4 h-4" />
+    </a>
+    <a
+      href="https://www.facebook.com/people/Geradev/61590062657544/"
+      target="_blank"
+      class="text-white/60 hover:text-white transition-colors duration-200"
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <PreciosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Precios</span>
-    </button>
+      <FacebookIcon class="w-4 h-4" />
+    </a>
 
+    <div class="w-px h-4 bg-white/20"></div>
 
-    <!-- Testimoniales -->
-    <button
-      onclick="openTestimonialsPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
+    <a
+      href="#contacto"
+      class="text-sm font-semibold text-[#50C1FC] hover:text-white transition-colors duration-200 whitespace-nowrap"
     >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <TestimoniosIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Testimonios</span>
-    </button>
+      Contáctanos
+    </a>
+  </div>
+</div>
 
-
-    <!-- Contacto -->
-    <button
-      onclick="openContactPopup()"
-      class="group flex-1 flex flex-col items-center gap-1.5 pt-2 px-1 pb-1 bg-transparent border-none cursor-pointer
-             -translate-y-0 hover:-translate-y-[5px] active:-translate-y-[2px]
-             transition-transform duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span class="flex items-center justify-center w-11 h-11 rounded-[0.875rem]
-                   text-white/70 bg-transparent
-                   transition-all duration-200
-                   group-hover:bg-white/10 group-hover:text-white group-hover:scale-110
-                   group-active:scale-95">
-        <ContactoIcon class="w-6 h-6" />
-      </span>
-      <span class="text-[0.6rem] font-bold tracking-[0.1em] uppercase text-white/50
-                   transition-colors duration-200 group-hover:text-white/95">Contacto</span>
-    </button>
-
+<!-- Footer completo (aparece al llegar al final) -->
+<footer
+  id="fullFooter"
+  class="w-full px-6 pt-6 pb-6 md:px-12 lg:px-20 opacity-0 translate-y-8 transition-all duration-700 ease-[cubic-bezier(.4,0,.2,1)] pointer-events-none"
+  style="border-top: 1px solid rgba(255,255,255,0.06);"
+>  <!-- Links grid - 3 columnas -->
+  <div class="grid grid-cols-1 md:grid-cols-3 mb-16 gap-10 md:gap-4">
+    <!-- Columna 1: Nombre y descripción -->
+    <div class="text-center md:text-left">
+      <p class="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+        Geradev<span class="text-[#50C1FC]">.</span>
+      </p>
+      <p class="text-sm text-white/40 leading-relaxed max-w-sm mx-auto md:mx-0">
+        Desarrollo web profesional enfocado en diseño, rendimiento y resultados
+        reales.
+      </p>
     </div>
-  </nav>
 
-  <!-- Copyright (visible solo en móvil) -->
-  <div class="md:hidden py-3 bg-black/80 text-center">
-    <p class="text-white/60 text-xs">© 2024 LS Studio. Todos los derechos reservados.</p>
+    <!-- Columna 2: Redes sociales -->
+    <div class="flex flex-col items-center">
+      <p
+        class="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4"
+      >
+        Redes Sociales
+      </p>
+      <ul class="flex flex-wrap gap-4 justify-center">
+        <li>
+          <a
+            href="https://wa.me/525632193996"
+            target="_blank"
+            class="footer-link text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-2"
+          >
+            <WhatsappIcon class="w-5 h-5" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/people/Geradev/61590062657544/"
+            target="_blank"
+            class="footer-link text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-2"
+          >
+            <FacebookIcon class="w-5 h-5" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/geradevx/"
+            target="_blank"
+            class="footer-link text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-2"
+          >
+            <InstagramIcon class="w-5 h-5" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/luis-gerardo-salazar-aguilar"
+            target="_blank"
+            class="footer-link text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-2"
+          >
+            <LinkedinIcon class="w-5 h-5" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/luisslzrx"
+            target="_blank"
+            class="footer-link text-white/50 hover:text-white transition-colors duration-200 flex items-center gap-2"
+          >
+            <GithubIcon class="w-5 h-5" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Botón de cotizar -->
+    <div class="flex flex-col items-center justify-center">
+      <p
+        class="text-xs font-semibold text-white/30 uppercase tracking-wide mb-4"
+      >
+        ¿Listo para empezar?
+      </p>
+      <a
+        href="#contacto"
+        class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-[#0d0d0d] text-sm font-bold bg-[#50C1FC] hover:bg-[#38b0f0] hover:scale-105 active:scale-95 transition-all duration-200 w-fit"
+      >
+        Cotizar Proyecto
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div style="border-top: 1px solid rgba(255,255,255,0.06);" class="mb-8 d-500">
+  </div>
+
+  <!-- Bottom bar -->
+  <div
+    class="flex flex-col md:flex-row items-center justify-between gap-4"
+  >
+    <p class="text-xs text-white/25 text-center md:text-left">
+      &copy; <span id="footerYear"></span> Geradev · Luis Gerardo Salazar
+    </p>
+
+    <div class="flex items-center gap-4 justify-center">
+      <a
+        href="#"
+        class="text-xs text-white/25 hover:text-white/60 transition-colors duration-200"
+        >Privacidad</a
+      >
+      <a
+        href="#"
+        class="text-xs text-white/25 hover:text-white/60 transition-colors duration-200"
+        >Términos</a
+      >
+    </div>
   </div>
 </footer>
 
 <style>
-  /* Solo estados JS-toggled de popups */
-  .popup-overlay {
-    opacity: 0;
-    transition: opacity 0.15s ease-out;
+  .footer-link {
+    position: relative;
+    display: inline-block;
   }
-  .popup-overlay.show { opacity: 1; }
+  .footer-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #50c1fc;
+    transition: width 0.25s ease;
+  }
+  .footer-link:hover::after {
+    width: 100%;
+  }
 
-  .popup-content {
-    transform: scale(0.9) translateY(20px);
-    opacity: 0;
-    transition: all 0.2s ease-out;
-  }
-  .popup-content.show {
-    transform: scale(1) translateY(0);
+  #fullFooter.revealed {
     opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #footerPill {
+    translate: -50% 0;
+  }
+
+  /* Pill se desvanece y baja ligeramente cuando el footer está visible */
+  #footerPill.hide-pill {
+    opacity: 0;
+    translate: -50% 10px;
+    pointer-events: none;
   }
 </style>
 
-<!-- Popup About -->
-<div id="aboutPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeAboutPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4 overflow-visible">
-    <div class="popup-content">
-      <AcercaDeMi />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Services -->
-<div id="servicesPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeServicesPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Servicios />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Precios -->
-<div id="pricingPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closePricingPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Precios />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Portafolio -->
-<div id="galleryPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeGalleryPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Portafolio />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Beneficios -->
-<div id="benefitsPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeBenefitsPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Beneficios />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Testimonios -->
-<div id="testimonialsPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeTestimonialsPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <TestimonialsContent />
-    </div>
-  </div>
-</div>
-
-<!-- Popup Contacto -->
-<div id="contactPopup" class="fixed inset-0 z-[60] hidden">
-  <!-- Overlay -->
-  <div 
-    class="popup-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"
-    onclick="closeContactPopup()"
-  ></div>
-  
-  <!-- Contenedor del contenido -->
-  <div class="relative flex items-center justify-center min-h-screen p-4">
-    <div class="popup-content">
-      <Contacto />
-    </div>
-  </div>
-</div>
-
-<!-- Script para manejar los popups -->
 <script is:inline>
-  function openAboutPopup() {
-    const popup = document.getElementById('aboutPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
+  (function () {
+    const pill = document.getElementById("footerPill");
+    const fullFooter = document.getElementById("fullFooter");
+    const yearEl = document.getElementById("footerYear");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  function closeAboutPopup() {
-    const popup = document.getElementById('aboutPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
+    function check() {
+      // distancia desde el fondo de la página hasta el viewport
+      const distFromBottom =
+        document.documentElement.scrollHeight -
+        window.scrollY -
+        window.innerHeight;
 
-  function openServicesPopup() {
-    const popup = document.getElementById('servicesPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
+      if (distFromBottom < 80) {
+        fullFooter.classList.add("revealed");
+        pill.classList.add("hide-pill");
+      } else {
+        fullFooter.classList.remove("revealed");
+        pill.classList.remove("hide-pill");
+      }
     }
-  }
 
-  function closeServicesPopup() {
-    const popup = document.getElementById('servicesPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  function openPricingPopup() {
-    const popup = document.getElementById('pricingPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
-
-  function closePricingPopup() {
-    const popup = document.getElementById('pricingPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  function openGalleryPopup() {
-    const popup = document.getElementById('galleryPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
-
-  function closeGalleryPopup() {
-    const popup = document.getElementById('galleryPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  function openBenefitsPopup() {
-    const popup = document.getElementById('benefitsPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
-
-  function closeBenefitsPopup() {
-    const popup = document.getElementById('benefitsPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  function openTestimonialsPopup() {
-    const popup = document.getElementById('testimonialsPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
-
-  function closeTestimonialsPopup() {
-    const popup = document.getElementById('testimonialsPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  function openContactPopup() {
-    const popup = document.getElementById('contactPopup');
-    if (popup) {
-      popup.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => {
-        const overlay = popup.querySelector('.popup-overlay');
-        const content = popup.querySelector('.popup-content');
-        if (overlay) overlay.classList.add('show');
-        if (content) content.classList.add('show');
-      });
-    }
-  }
-
-  function closeContactPopup() {
-    const popup = document.getElementById('contactPopup');
-    if (popup) {
-      const overlay = popup.querySelector('.popup-overlay');
-      const content = popup.querySelector('.popup-content');
-      if (overlay) overlay.classList.remove('show');
-      if (content) content.classList.remove('show');
-      setTimeout(() => {
-        popup.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 200);
-    }
-  }
-
-  // Cerrar con tecla Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeAboutPopup();
-      closeServicesPopup();
-      closePricingPopup();
-      closeGalleryPopup();
-      closeBenefitsPopup();
-      closeTestimonialsPopup();
-      closeContactPopup();
-    }
-  });
+    window.addEventListener("scroll", check, { passive: true });
+    check();
+  })();
 </script>
